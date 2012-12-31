@@ -6,17 +6,34 @@ describe('Controller: NavigationCtrl', function() {
   beforeEach(module('casteApp'));
 
   var NavigationCtrl,
-    scope;
+    scope, location;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller) {
     scope = {};
+    location = {};
     NavigationCtrl = $controller('NavigationCtrl', {
-      $scope: scope
+      $scope: scope,
+      $location: location
     });
   }));
 
-  it('should attach a list of awesomeThings to the scope', function() {
-    expect(scope.awesomeThings.length).toBe(3);
+  it('should have a list of pages', function () {
+    expect(scope.pages).toBeDefined();
+    expect(scope.pages.length).toBeGreaterThan(0);
+  });
+
+  it('should consider an item active if the URL contains the item\'s name', function() {
+    location.path = function () {
+      return 'active';
+    };
+    expect(scope.isActive('active')).toBeTruthy();
+  });
+
+  it('should not consider an item active if the URL doesn\'t contain the item\'s name', function() {
+    location.path = function () {
+      return 'notInHere';
+    };
+    expect(scope.isActive('active')).toBeFalsy();
   });
 });

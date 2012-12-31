@@ -22,16 +22,14 @@
         <script src="scripts/vendor/json3.min.js"></script>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <!-- <div class="container-fluid">
+    <div class="container-fluid">
       <div class="row-fluid">
         <div class="span2">
           <div ng-include src="'views/navigation.html'" ng-controller="NavigationCtrl"></div>
         </div>
         <div class="span10 container-fluid" ng-view/>
       </div>
-    </div> -->
-    <div class="span12" ng-view/>
+    </div>
 
     <script src="components/jquery/jquery.js"></script>
     <script src="scripts/vendor/angular.js"></script>
@@ -40,9 +38,12 @@
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    
+    <script src="scripts/services/blogService.js"></script>
+
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/navigation.js"></script>
-    <script src="scripts/controllers/feed.js"></script>
+    <script src="scripts/controllers/blog.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

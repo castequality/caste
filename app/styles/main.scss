@@ -1,6 +1,43 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
 
-body {
-  background-color: black;
+.nav li a, 
+.blog-title {
+  color: black;
+  font-family: Courier New, Courier;
+  padding-top: 0;
+  padding-bottom: 0;
+  font-variant: small-caps;
+  font-weight: bolder;
+}
+
+.nav .active li a {
+  color: gray;
+}
+
+.blog-title a {
+  color: black;
+}
+
+.blog-title a:hover {
+  color: gray;
+}
+
+.blog-title hr {
+  margin: auto;
+  margin-top: 5px;
+}
+
+.blog-title small {
+  font-weight: bold;
+  font-size: 12px;
+  color: black;
+}
+
+.media .media-body span p {
+  font-family: Courier New, Courier;
+}
+
+.media .media-body img {
+  margin: auto;
 }

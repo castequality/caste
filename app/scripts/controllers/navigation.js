@@ -1,15 +1,17 @@
 'use strict';
 
-casteApp.controller('NavigationCtrl', function($scope, $routeParams) {
+casteApp.controller('NavigationCtrl', ['$scope', '$location', function($scope, $location) {
   $scope.pages = [{
-    link: 'feed',
-    title: 'Feed'
+    link: 'blog',
+    title: 'Blog'
   }, {
     link: 'collection',
     title: 'Collections'
   }];
 
-  $scope.isActive = function (name, isFirst) {
-
+  $scope.isActive = function (name) {
+    var p = $location.path(),
+        index = p.indexOf(name);
+    return index >= 0;
   };
-});
+}]);

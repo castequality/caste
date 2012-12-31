@@ -10,10 +10,12 @@ files = [
   JASMINE,
   JASMINE_ADAPTER,
   'app/scripts/vendor/angular.js',
+  'app/components/angular-ui/build/*.min.js',
+  'app/components/jquery/*.js',
   'test/vendor/angular-mocks.js',
   'app/scripts/*.js',
   'app/scripts/**/*.js',
-  'test/mock/**/*.js',
+  'test/vendor/**/*.js',
   'test/spec/**/*.js'
 ];
 
@@ -47,7 +49,7 @@ logLevel = LOG_INFO;
 
 
 // enable / disable watching file and executing tests whenever any file changes
-autoWatch = false;
+autoWatch = true;
 
 
 // Start these browsers, currently available:

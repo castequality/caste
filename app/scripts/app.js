@@ -3,16 +3,12 @@
 var casteApp = angular.module('casteApp', ['ui'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
+      .when('/blog', {
+        templateUrl: 'views/blog.html',
+        controller: 'BlogCtrl'
       })
-      // .when('/feed', {
-      //   templateUrl: 'views/feed.html',
-      //   controller: 'FeedCtrl'
-      // })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/blog'
       });
   }])
 .value('ui.config', {
