@@ -1,0 +1,12 @@
+<div class="page-header">
+  <img class="pull-left user-icon" ng-src="{{user.profile_picture}}" alt="{{user.profile_picture}}">
+  <h3>@{{user.username}}</h3>
+</div>
+<ul class="thumbnails">
+  <li ng-repeat="gram in grams">
+    <div class="thumbnail">
+      <img ng-src="{{gram.images.standard_resolution.url}}" alt="{{gram.caption}}">
+      <p>{{gram.caption.text}}</p>
+    </div>
+  </li>
+</ul>

@@ -5,8 +5,23 @@ casteApp.controller('NavigationCtrl', ['$scope', '$location', function($scope, $
     link: 'blog',
     title: 'Blog'
   }, {
-    link: 'collection',
-    title: 'Collections'
+    link: 'instagram',
+    title: 'instagram'
+  }, {
+    link: 'project',
+    title: 'Projects'
+  }, {
+    link: 'store',
+    title: 'Store'
+  }, {
+    link: 'media',
+    title: 'Media'
+  }, {
+    link: 'stockists',
+    title: 'stockists'
+  }, {
+    link: 'about',
+    title: 'About'
   }];
 
   $scope.isActive = function (name) {

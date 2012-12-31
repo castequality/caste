@@ -7,6 +7,10 @@ var casteApp = angular.module('casteApp', ['ui'])
         templateUrl: 'views/blog.html',
         controller: 'BlogCtrl'
       })
+      .when('/instagram', {
+        templateUrl: 'views/instagram.html',
+        controller: 'InstagramCtrl'
+      })
       .otherwise({
         redirectTo: '/blog'
       });
