@@ -8,7 +8,7 @@ casteApp.controller('NavigationCtrl', ['$scope', '$location', function($scope, $
     link: 'instagram',
     title: 'instagram'
   }, {
-    link: 'project',
+    link: 'projects',
     title: 'Projects'
   }, {
     link: 'store',
