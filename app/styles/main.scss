@@ -1,6 +1,27 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
 
+div#banner {
+  width: 750px;
+  height: 118px;
+  background-color: #CCC;
+  margin: 20px 20px 20px 0;
+}
+
+div#logo {
+  width: 118px;
+  height: 118px;
+  background-color: #CCC;
+  margin: 20px 20px 20px 0;
+}
+
+div#links {
+  height: 118px;
+  width: 72px;
+  background-color: #CCC;
+  margin: 20px 20px 20px 0;
+}
+
 p > strong {
   margin: 0;
   padding: 0;
