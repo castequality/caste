@@ -1,6 +1,23 @@
 @import "compass_twitter_bootstrap";
 @import "compass_twitter_bootstrap_responsive";
 
+body {
+  background-image: url('images/viewmaster.svg');
+}
+
+#viewmaster.span12 {
+  margin: -53%;
+  -webkit-transition: all 1s ease-in-out;
+}
+
+.rotating {
+  -webkit-transform: rotate(25.71deg);
+}
+
+.rotated {
+  -webkit-transform: rotate(45.71deg);
+}
+
 p > strong {
   margin: 0;
   padding: 0;

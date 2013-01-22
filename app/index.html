@@ -21,13 +21,12 @@
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
-    <div class="container-fluid" style="width: 800px; margin: auto;">
+<!-- 
+    <div class="container-fluid" style="width: 800px; margin: auto;"> -->
+    <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span2">
-          <div ng-include src="'views/navigation.html'" ng-controller="NavigationCtrl"></div>
-        </div>
-        <div class="span10 container-fluid" ng-view/>
+        <div class="span4" ng-include src="'views/navigation.html'" ng-controller="NavigationCtrl"></div>
+        <div class="span8 container-fluid" ng-view/>
       </div>
     </div>
 
