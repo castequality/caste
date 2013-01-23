@@ -21,5 +21,5 @@ casteApp.service('instagramService', ['$http', 'INSTA_API', 'INSTA_WEB_ROOT', 'I
 }]).
 value('INSTA_API', '259689659.f59def8.a917d511dec04821af5c92a842fafe62').
 value('INSTA_WEB_ROOT', 'https://api.instagram.com/v1/users').
-value('INSTA_ID', 10977253);
+value('INSTA_ID', 259689659);
 // value('INSTA_ID', 259689659);

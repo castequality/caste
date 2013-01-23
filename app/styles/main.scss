@@ -1,21 +1,104 @@
-@import "compass_twitter_bootstrap";
-@import "compass_twitter_bootstrap_responsive";
-
-body {
-  background-image: url('images/viewmaster.svg');
+#content {
+  margin: auto;
+  width: 1000px;
 }
 
-#viewmaster.span12 {
-  margin: -53%;
-  -webkit-transition: all 1s ease-in-out;
+ul {
+  -webkit-padding-start: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
 }
 
-.rotating {
-  -webkit-transform: rotate(25.71deg);
+#header > * {
+  float: left;
 }
 
-.rotated {
-  -webkit-transform: rotate(45.71deg);
+#banner {
+  width: 750px;
+  height: 118px;
+  background-color: #CCC;
+  margin: 20px 20px 20px 0;
+}
+
+#logo {
+  width: 118px;
+  height: 118px;
+  background-color: #CCC;
+  margin: 20px 20px 20px 0;
+}
+
+#links {
+  height: 118px;
+  width: 72px;
+  margin: 20px 20px 20px 0;
+  list-style-type: none;
+}
+
+#links > :first-child {
+  margin-top: 14px;
+}
+
+#links > :last-child {
+  margin-bottom: 14px;
+}
+
+#links > li {
+  width: 72px;
+  height: 18px;
+  text-align: right;
+}
+
+#links > li > a {
+  text-decoration: none;
+  font-weight: bold;
+  height: 18px;
+  font-variant: small-caps;
+}
+
+#blog {
+  width: 524px;
+  margin-right: 20px;
+  overflow: hidden;
+  float: left;
+}
+
+#photo-feed {
+  width: 118px;
+  margin-right: 20px;
+  overflow: hidden;
+  float: left;
+}
+
+.feed-photo {
+  width: 118px;
+  margin: 4px 0 4px 0;
+}
+
+img.instagram {
+  height: 206px;
+  width: 206px;
+}
+
+img.featured {
+  height: 244px;
+  width: 206px;
+}
+
+.photo-column {
+  width: 206px;
+  float: left;
+}
+
+.photo-column > * {
+  clear: both;
+  margin-bottom: 20px;
+}
+
+.ng-view {
+  clear: both;
+  margin-left: 92px;
+  margin-right: 20px;
 }
 
 p > strong {

@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Controller: NavigationCtrl', function() {
+describe('Controller: HeaderCtrl', function() {
 
   // load the controller's module
   beforeEach(module('casteApp'));
 
-  var NavigationCtrl,
+  var HeaderCtrl,
     scope, location;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller) {
     scope = {};
     location = {};
-    NavigationCtrl = $controller('NavigationCtrl', {
+    HeaderCtrl = $controller('HeaderCtrl', {
       $scope: scope,
       $location: location
     });

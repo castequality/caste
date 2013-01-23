@@ -21,15 +21,10 @@
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
-<!-- 
-    <div class="container-fluid" style="width: 800px; margin: auto;"> -->
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span4" ng-include src="'views/navigation.html'" ng-controller="NavigationCtrl"></div>
-        <div class="span8 container-fluid" ng-view/>
-      </div>
+    <div id="content">
+      <div id="header" ng-include src="'views/header.html'" ng-controller="HeaderCtrl"></div>
+      <div class="ng-view"></div>
     </div>
-
     <script src="components/jquery/jquery.js"></script>
     <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
     <script src="components/angular/angular.js"></script>
@@ -42,7 +37,7 @@
     <script src="scripts/services/blogService.js"></script>
 
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/navigation.js"></script>
+    <script src="scripts/controllers/header.js"></script>
     <script src="scripts/controllers/blog.js"></script>
     <script src="scripts/services/instagramService.js"></script>
     <script src="scripts/controllers/instagram.js"></script>
