@@ -9,7 +9,7 @@
         <a ng-href="{{post.post_url}}">{{post.title}}</a>
         <small class="pull-right">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</small>
       </h4>
-      <span ng-bind-html-unsafe="post.body"/>
+      <p ng-bind-html-unsafe="post.body"/>
     </div>
   </div>
 </div>

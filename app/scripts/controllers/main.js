@@ -12,6 +12,22 @@ casteApp.controller('MainCtrl', ['$scope', 'blogService', 'instagramService', fu
     url: 'images/placeholders/BLOG2.jpg'
   }, {
     url: 'images/placeholders/FEATURED_PRODUCT_206x244.jpg'
+  }, {
+    url: 'images/placeholders/BLOG2.jpg'
+  }, {
+    url: 'images/placeholders/FEATURED_PRODUCT_206x244.jpg'
+  }, {
+    url: 'images/placeholders/BLOG2.jpg'
+  }, {
+    url: 'images/placeholders/FEATURED_PRODUCT_206x244.jpg'
+  }, {
+    url: 'images/placeholders/BLOG2.jpg'
+  }, {
+    url: 'images/placeholders/FEATURED_PRODUCT_206x244.jpg'
+  }, {
+    url: 'images/placeholders/BLOG2.jpg'
+  }, {
+    url: 'images/placeholders/FEATURED_PRODUCT_206x244.jpg'
   }];
 
   blogService.posts().

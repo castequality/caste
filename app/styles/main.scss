@@ -1,37 +1,39 @@
+@import "mixins";
+
+html, 
+body {
+  padding: 0;
+  margin: 0;
+}
+
 #content {
   margin: auto;
   width: 1000px;
 }
 
-ul {
-  -webkit-padding-start: 0;
-  -webkit-margin-after: 0;
-  -webkit-margin-before: 0;
-  -webkit-margin-end: 0;
-}
-
-#header > * {
-  float: left;
+#header {
+  @extend .stretch;
+  @include flex-direction(row);
+  @include justify-content(center);
+  margin: 20px;
 }
 
 #banner {
   width: 750px;
   height: 118px;
-  background-color: #CCC;
-  margin: 20px 20px 20px 0;
+  margin-right: 20px;
 }
 
 #logo {
   width: 118px;
   height: 118px;
-  background-color: #CCC;
-  margin: 20px 20px 20px 0;
+  margin-right: 20px;
 }
 
 #links {
   height: 118px;
   width: 72px;
-  margin: 20px 20px 20px 0;
+  margin-right: 20px;
   list-style-type: none;
 }
 
@@ -56,23 +58,54 @@ ul {
   font-variant: small-caps;
 }
 
+.stretch {
+  @include display-flex;
+  @include align-items(stretch);
+}
+
+.ng-view {
+  @extend .stretch;
+  @include justify-content(center);
+  margin-left: 92px;
+  margin-right: 20px;
+}
+
 #blog {
+  @extend .stretch;
+  @include justify-content(flex-start);
+  @include flex-direction(column);
   width: 524px;
   margin-right: 20px;
-  overflow: hidden;
-  float: left;
 }
 
 #photo-feed {
   width: 118px;
   margin-right: 20px;
-  overflow: hidden;
-  float: left;
+}
+
+#photo-feed > ::last-child {
+  margin: 0;
+}
+
+.photo-column {
+  width: 206px;
+}
+
+.photo-column > * {
+  margin-bottom: 20px;
 }
 
 .feed-photo {
   width: 118px;
   margin: 4px 0 4px 0;
+}
+
+ul {
+  margin-top: 18px;
+  -webkit-padding-start: 0;
+  -webkit-margin-after: 0;
+  -webkit-margin-before: 0;
+  -webkit-margin-end: 0;
 }
 
 img.instagram {
@@ -83,22 +116,6 @@ img.instagram {
 img.featured {
   height: 244px;
   width: 206px;
-}
-
-.photo-column {
-  width: 206px;
-  float: left;
-}
-
-.photo-column > * {
-  clear: both;
-  margin-bottom: 20px;
-}
-
-.ng-view {
-  clear: both;
-  margin-left: 92px;
-  margin-right: 20px;
 }
 
 p > strong {
