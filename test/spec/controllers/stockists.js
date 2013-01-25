@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Controller: BlogCtrl', function() {
+describe('Controller: StockistsCtrl', function() {
 
   // load the controller's module
   beforeEach(module('casteApp'));
 
-  var BlogCtrl,
+  var StockistsCtrl,
     scope, blogService, data;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller) {
     scope = {};
     blogService = {};
-    BlogCtrl = $controller('BlogCtrl', {
+    StockistsCtrl = $controller('StockistsCtrl', {
       $scope: scope,
       blogService: blogService
     });

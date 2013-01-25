@@ -6,6 +6,15 @@ body {
   margin: 0;
 }
 
+.ui-scrollfix {
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 #content {
   margin: auto;
   width: 1000px;
@@ -68,6 +77,20 @@ body {
   @include justify-content(center);
   margin-left: 92px;
   margin-right: 20px;
+  clear: both;
+}
+
+.stockist {
+  width: 207px;
+  height: 155px;
+  background-color: black;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.stockist:nth-child(odd) {
+  background-color: gray;
 }
 
 #blog {

@@ -7,9 +7,9 @@ var casteApp = angular.module('casteApp', ['ui'])
         templateUrl: 'views/main.html',
         controller: 'MainCtrl'
       })
-      .when('/blog', {
-        templateUrl: 'views/blog.html',
-        controller: 'BlogCtrl'
+      .when('/stockists', {
+        templateUrl: 'views/stockists.html',
+        controller: 'StockistsCtrl'
       })
       .when('/instagram', {
         templateUrl: 'views/instagram.html',
