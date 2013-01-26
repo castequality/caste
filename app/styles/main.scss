@@ -73,14 +73,17 @@ body {
 }
 
 .ng-view {
-  @extend .stretch;
-  @include justify-content(center);
   margin-left: 92px;
   margin-right: 20px;
+}
+
+.ng-view:after {
+  display: table;
   clear: both;
 }
 
 .stockist {
+  float: left;
   width: 207px;
   height: 155px;
   background-color: black;
@@ -99,19 +102,22 @@ body {
   @include flex-direction(column);
   width: 524px;
   margin-right: 20px;
+  float: left;
 }
 
 #photo-feed {
   width: 118px;
   margin-right: 20px;
+  float: left;
 }
 
-#photo-feed > ::last-child {
+#photo-feed > :last-child {
   margin: 0;
 }
 
 .photo-column {
   width: 206px;
+  float: left;
 }
 
 .photo-column > * {

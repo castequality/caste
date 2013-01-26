@@ -2,19 +2,19 @@
 
 casteApp.controller('HeaderCtrl', ['$scope', '$location', function($scope, $location) {
   $scope.pages = [{
-    link: 'project',
+    link: '/project',
     title: 'Project'
   }, {
-    link: 'visual',
+    link: '/visual',
     title: 'Visual'
   }, {
-    link: 'stockists',
+    link: '/stockists',
     title: 'stockists'
   }, {
-    link: 'about',
+    link: '/about',
     title: 'About'
   }, {
-    link: 'contact',
+    link: '/contact',
     title: 'contact'
   }];
 

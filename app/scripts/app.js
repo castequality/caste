@@ -4,27 +4,30 @@ var casteApp = angular.module('casteApp', ['ui'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       })
       .when('/stockists', {
-        templateUrl: 'views/stockists.html',
+        templateUrl: '/views/stockists.html',
         controller: 'StockistsCtrl'
       })
       .when('/instagram', {
-        templateUrl: 'views/instagram.html',
+        templateUrl: '/views/instagram.html',
         controller: 'InstagramCtrl'
       })
-      .when('/projects', {
-        templateUrl: 'views/projects.html',
+      .when('/project', {
+        templateUrl: '/views/projects.html',
         controller: 'ProjectsCtrl'
       })
       .otherwise({
         redirectTo: '/'
       });
   }])
-.value('ui.config', {
-})
-.factory('Modernizr', ['$window', function ($window) {
-  return $window.Modernizr;
-}]);
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.html5Mode(true);
+  }])
+  .value('ui.config', {
+  })
+  .factory('Modernizr', ['$window', function ($window) {
+    return $window.Modernizr;
+  }]);
