@@ -1,6 +1,9 @@
 @import "mixins";
 
-html, 
+html {
+  overflow-y: scroll;
+} 
+
 body {
   padding: 0;
   margin: 0;
@@ -37,6 +40,10 @@ body {
   width: 118px;
   height: 118px;
   margin-right: 20px;
+}
+
+#logo > svg {
+  cursor: pointer; cursor: hand;
 }
 
 #links {
