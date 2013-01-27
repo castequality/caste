@@ -118,8 +118,13 @@ body {
   float: left;
 }
 
+#photo-feed > * {
+  width: 118px;
+  margin-bottom: 4px;
+}
+
 #photo-feed > :last-child {
-  margin: 0;
+  margin-bottom: 0;
 }
 
 .photo-column {
@@ -128,12 +133,8 @@ body {
 }
 
 .photo-column > * {
+  display: block;
   margin-bottom: 20px;
-}
-
-.feed-photo {
-  width: 118px;
-  margin: 4px 0 4px 0;
 }
 
 ul {
@@ -167,39 +168,4 @@ p, h1, h2, h3, h4, h5, a {
 
 a:hover {
   color: gray
-}
-
-img.user-icon {
-  width: 50px;
-}
-
-.nav li a, 
-.blog-title {
-  padding-top: 0;
-  padding-bottom: 0;
-  font-variant: small-caps;
-  font-weight: bolder;
-}
-
-.nav .active li a {
-  color: gray;
-}
-
-.blog-title hr {
-  margin: auto;
-  margin-top: 5px;
-}
-
-.blog-title small {
-  font-weight: bold;
-  font-size: 12px;
-  color: black;
-}
-
-.media .media-body span p {
-  font-family: Courier New, Courier;
-}
-
-.media .media-body img {
-  margin: auto;
 }

@@ -1,10 +1,6 @@
 'use strict';
 
-casteApp.controller('MainCtrl', ['$scope', 'blogService', 'instagramService', function($scope, blogService, instagramService) {
-  $scope.featured = {
-    url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg',
-    caption: 'featured test'
-  };
+casteApp.controller('MainCtrl', ['$scope', 'blogService', 'instagramService', 'Store', function($scope, blogService, instagramService, Store) {
 
   $scope.feed = [{
     url: '/images/placeholders/BLOG1.jpg'
@@ -29,6 +25,8 @@ casteApp.controller('MainCtrl', ['$scope', 'blogService', 'instagramService', fu
   }, {
     url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg'
   }];
+
+  $scope.store = Store;
 
   blogService.posts().
     success(function (data) {

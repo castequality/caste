@@ -14,6 +14,10 @@
   </div>
 </div>
 <div class="photo-column" ui-scrollfix>
-  <img class="featured" ng-src="{{featured.url}}" alt="{{featured.caption}}">
-  <img class="instagram" ng-src="{{gram.images.standard_resolution.url}}" alt="{{gram.caption}}">
+  <a ng-href="//castequality.bigcartel.com{{store.featured.url}}">
+    <img class="featured" ng-src="{{store.featured.images[0].url}}" alt="{{store.featured.description}}">
+  </a>
+  <a href="//instagram.com/castequality">
+    <img class="instagram" ng-src="{{gram.images.standard_resolution.url}}" alt="{{gram.caption}}">
+  </a>
 </div>

@@ -1,4 +1,4 @@
 .sass-cache/
 temp/
-.DS_Store
+dist/
 components/
