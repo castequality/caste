@@ -2,18 +2,16 @@
   <img ng-repeat="photo in feed" ng-src="{{photo.url}}" class="feed-photo">
 </div>
 <div id="blog">
-  <div ng-repeat="post in posts" class="media">
-    <div class="media-body">
-      <h4 class="media-heading blog-title">
-        <hr>
-        <a ng-href="{{post.post_url}}">{{post.title}}</a>
-        <small class="pull-right">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</small>
-      </h4>
-      <p ng-bind-html-unsafe="post.body"/>
-    </div>
+  <div ng-repeat="post in posts" class="post">
+    <hr>
+    <h4 class="post-title">
+      <a ng-href="{{post.post_url}}">{{post.title}}</a>
+      <small class="post-date">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</small>
+    </h4>
+    <p ng-bind-html-unsafe="post.body"/>
   </div>
 </div>
-<div class="photo-column" ui-scrollfix>
+<div class="photo-column">
   <a ng-href="//castequality.bigcartel.com{{store.featured.url}}">
     <img class="featured" ng-src="{{store.featured.images[0].url}}" alt="{{store.featured.description}}">
   </a>

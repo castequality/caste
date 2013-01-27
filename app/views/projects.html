@@ -1,11 +1,6 @@
-<div ui-jq="carousel" id="{{project.id}}" class="carousel slide">
-  <!-- Carousel items -->
-  <div class="carousel-inner">
-    <div class="item" ng-class="{active: $first}" ng-repeat="p in project.photos">
-      <img ng-src="{{p.alt_sizes[0].url}}"/>
-    </div>
-  </div>
-  <!-- Carousel nav -->
-  <a class="carousel-control left" ng-href="#{{project.id}}" data-slide="prev">&lsaquo;</a>
-  <a class="carousel-control right" ng-href="#{{project.id}}" data-slide="next">&rsaquo;</a>
-</div>
+<carousel interval="-1">
+  <slide ng-repeat="p in project.photos" active="$first">
+    <img class="project-img" ng-src="{{p.original_size.url}}" style="margin:auto;">
+    <p>{{p.caption}}</p>
+  </slide>
+</carousel>

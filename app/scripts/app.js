@@ -1,6 +1,6 @@
 'use strict';
 
-var casteApp = angular.module('casteApp', ['ui'])
+var casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap.carousel'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
