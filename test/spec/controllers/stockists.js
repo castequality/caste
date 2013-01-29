@@ -6,21 +6,21 @@ describe('Controller: StockistsCtrl', function() {
   beforeEach(module('casteApp'));
 
   var StockistsCtrl,
-    scope, blogService, data;
+    scope, Blog, data;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller) {
     scope = {};
-    blogService = {};
+    Blog = {};
     StockistsCtrl = $controller('StockistsCtrl', {
       $scope: scope,
-      blogService: blogService
+      Blog: Blog
     });
   }));
 
   it('should query for the most recent posts', function() {
     // var posts = ['one,', 'two'];
-    // blogService.query = function () {
+    // Blog.query = function () {
     //   return {
     //     success: function (callback) {
     //       callback({

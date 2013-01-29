@@ -1,6 +1,6 @@
 'use strict';
 
-var casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap.carousel'])
+var casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
@@ -19,15 +19,13 @@ var casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap.carousel'])
         templateUrl: '/views/projects.html',
         controller: 'ProjectsCtrl'
       })
+      .when('/visual', {
+        templateUrl: 'views/visual.html',
+        controller: 'VisualsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
   }])
-  .config(['$locationProvider', function($locationProvider) {
-    $locationProvider.html5Mode(true);
-  }])
   .value('ui.config', {
-  })
-  .factory('Modernizr', ['$window', function ($window) {
-    return $window.Modernizr;
-  }]);
+  });

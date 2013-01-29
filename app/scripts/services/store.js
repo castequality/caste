@@ -2,7 +2,7 @@
 
 casteApp.service('Store', ['Math', '$http', 'STORE_ROOT', function(Math, $http, STORE_ROOT) {
   var self = this;
-  $http.jsonp(STORE_ROOT, { callback: 'JSON_CALLBACK' }).success(function (data) {
+  $http.jsonp(STORE_ROOT, { params: { callback: 'JSON_CALLBACK' } }).success(function (data) {
     var index = Math.floor(Math.random(data.length));
     self.featured = data[index];
   });

@@ -1,40 +1,28 @@
 'use strict';
 
-casteApp.controller('MainCtrl', ['$scope', 'blogService', 'instagramService', 'Store', function($scope, blogService, instagramService, Store) {
-
-  $scope.feed = [{
-    url: '/images/placeholders/BLOG1.jpg'
-  }, {
-    url: '/images/placeholders/BLOG2.jpg'
-  }, {
-    url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg'
-  }, {
-    url: '/images/placeholders/BLOG2.jpg'
-  }, {
-    url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg'
-  }, {
-    url: '/images/placeholders/BLOG2.jpg'
-  }, {
-    url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg'
-  }, {
-    url: '/images/placeholders/BLOG2.jpg'
-  }, {
-    url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg'
-  }, {
-    url: '/images/placeholders/BLOG2.jpg'
-  }, {
-    url: '/images/placeholders/FEATURED_PRODUCT_206x244.jpg'
-  }];
-
+casteApp.controller('MainCtrl', ['$scope', 'Blog', 'instagramService', 'Store', function($scope, Blog, instagramService, Store) {
+  $scope.feed = [];
   $scope.store = Store;
 
-  blogService.posts().
+  Blog.posts().
     success(function (data) {
       $scope.posts = data.response.posts;
     }).
     error(function (status) {
       // todo: handle error
     });
+
+  Blog.visuals().
+    then(function(results) {
+      angular.forEach(results, function (result) {
+        angular.forEach(result.data.response.posts, function (post) {
+          angular.forEach(post.photos, function (photo) {
+            $scope.feed.push(photo);
+          });
+        });
+      });
+    });
+
   instagramService.query({
     count: 1
   }).

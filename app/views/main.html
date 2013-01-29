@@ -1,5 +1,7 @@
 <div id="photo-feed">
-  <img ng-repeat="photo in feed" ng-src="{{photo.url}}" class="feed-photo">
+  <a ng-repeat="photo in feed" href="{{photo.alt_sizes[1].url}}" rel="visuals">
+    <img ng-src="{{photo.alt_sizes[1].url}}">
+  </a>
 </div>
 <div id="blog">
   <div ng-repeat="post in posts" class="post">
