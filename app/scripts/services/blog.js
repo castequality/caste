@@ -12,7 +12,7 @@ casteApp.service('Blog', ['$http', '$q', 'API_KEY', 'WEB_ROOT', 'contributors', 
   };
 
   this.posts = function (args) {
-    return this.query(WEB_ROOT + '/castequality.tumblr.com/posts', angular.extend({}, args, { type: 'text' }));
+    return this.query(WEB_ROOT + '/casteblog.tumblr.com/posts', angular.extend({}, args));
   };
 
   this.projects = function (args) {

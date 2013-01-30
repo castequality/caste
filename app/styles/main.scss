@@ -195,6 +195,15 @@ a {
   float: left;
 }
 
+#blog > .post > .video-player {
+  padding: 0 12px 0 12px;
+}
+
+#blog > .post > p > p > img {
+  max-width: 524px;
+  margin: 12px;
+}
+
 .post {
   
 }

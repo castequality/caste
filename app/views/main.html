@@ -10,7 +10,8 @@
       <a ng-href="{{post.post_url}}">{{post.title}}</a>
       <small class="post-date">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</small>
     </h4>
-    <p ng-bind-html-unsafe="post.body"/>
+    <p ng-show="post.player" class="video-player" ng-bind-html-unsafe="post.player[2].embed_code"/>
+    <p ng-bind-html-unsafe="post.body || post.caption"/>
   </div>
 </div>
 <div class="photo-column">
