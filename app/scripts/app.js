@@ -11,10 +11,6 @@ var casteApp = angular.module('casteApp', ['ui'])
         templateUrl: '/views/stockists.html',
         controller: 'StockistsCtrl'
       })
-      .when('/instagram', {
-        templateUrl: '/views/instagram.html',
-        controller: 'InstagramCtrl'
-      })
       .when('/project', {
         templateUrl: '/views/projects.html',
         controller: 'ProjectsCtrl'

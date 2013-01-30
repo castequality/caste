@@ -1,6 +1,6 @@
 'use strict';
 
-casteApp.controller('MainCtrl', ['$scope', 'Blog', 'instagramService', 'Store', function($scope, Blog, instagramService, Store) {
+casteApp.controller('MainCtrl', ['$scope', 'Blog', 'Instagram', 'Store', function($scope, Blog, Instagram, Store) {
   $scope.feed = [];
   $scope.store = Store;
 
@@ -23,7 +23,7 @@ casteApp.controller('MainCtrl', ['$scope', 'Blog', 'instagramService', 'Store', 
       });
     });
 
-  instagramService.query({
+  Instagram.query({
     count: 1
   }).
     success(function (response) {

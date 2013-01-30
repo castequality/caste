@@ -1,12 +1,12 @@
 'use strict';
 
-describe('Service: instagramService', function (INSTA_WEB_ROOT, INSTA_ID) {
+describe('Service: Instagram', function (INSTA_WEB_ROOT, INSTA_ID) {
 
   // load the service's module
   beforeEach(module('casteApp'));
 
   // instantiate service
-  var injector, $httpBackend, instagramService,
+  var injector, $httpBackend, Instagram,
   USER_URL = INSTA_WEB_ROOT + '/' + INSTA_ID,
   FEED_URL = USER_URL + '/media/recent';
   beforeEach(inject(function($injector) {
@@ -18,8 +18,8 @@ describe('Service: instagramService', function (INSTA_WEB_ROOT, INSTA_ID) {
     $httpBackend.whenJSONP(USER_URL).respond({
 
     });
-    instagramService = injector.get('instagramService');
-    expect(instagramService.photos());
+    Instagram = injector.get('Instagram');
+    expect(Instagram.photos());
   });
 
   it('should retrieve user info', function () {
@@ -27,7 +27,7 @@ describe('Service: instagramService', function (INSTA_WEB_ROOT, INSTA_ID) {
     $httpBackend.whenJSONP(FEED_URL).respond({
 
     });
-    instagramService = injector.get('instagramService');
-    expect(instagramService.user());
+    Instagram = injector.get('Instagram');
+    expect(Instagram.user());
   });
 });

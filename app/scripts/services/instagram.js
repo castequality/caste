@@ -1,6 +1,6 @@
 'use strict';
 
-casteApp.service('instagramService', ['$http', 'INSTA_API', 'INSTA_WEB_ROOT', 'INSTA_ID', function($http, INSTA_API, INSTA_WEB_ROOT, INSTA_ID) {
+casteApp.service('Instagram', ['$http', 'INSTA_API', 'INSTA_WEB_ROOT', 'INSTA_ID', function($http, INSTA_API, INSTA_WEB_ROOT, INSTA_ID) {
   var self = this;
   
   this.query = function (args) {
