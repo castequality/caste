@@ -9,6 +9,7 @@ body {
 
 ul, li {
   list-style-type: none;
+  padding: 0;
 }
 
 a {
@@ -72,18 +73,39 @@ a {
 }
 
 #visuals {
+  display: inline-block;
   width: 100%;
+  columns: 217px;
+  column-gap: 4px;
+
+   /* Firefox */
   -moz-columns: 217px;
+  -moz-column-gap: 4px;
+   /* Safari and Chrome */
+  -webkit-column-gap: 4px;
   -webkit-columns: 217px;
-  -columns: 217px;
-  -moz-column-gap:4px; /* Firefox */
-  -webkit-column-gap:4px; /* Safari and Chrome */
-  column-gap:4px;
+
 }
 
 #visuals > a > img {
   width: 217px;
   margin: 4px auto 0 auto;
+}
+
+#project {
+  width: 888px;
+  height: 500px;
+}
+
+#project > img {
+  width: 888px;
+  height: 500px;
+  margin: auto;
+}
+
+#project:after {
+  clear: both;
+  display: table;
 }
 
 .ng-view {
@@ -208,13 +230,6 @@ a {
 .photo-column > * {
   display: block;
   margin-bottom: 20px;
-}
-
-img.project-img {
-  width: 888px;
-  height: 500px;
-  overflow: hide;
-  margin: auto;
 }
 
 ul {
