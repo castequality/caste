@@ -1,6 +1,6 @@
 'use strict';
 
-var casteApp = angular.module('casteApp', ['ui'])
+var casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
       .when('/', {
@@ -24,4 +24,8 @@ var casteApp = angular.module('casteApp', ['ui'])
       });
   }])
   .value('ui.config', {
+    fancybox: {
+      'transitionIn'  : 'elastic',
+      'transitionOut' : 'elastic'
+    }
   });

@@ -1,11 +1,13 @@
 'use strict';
 
 casteApp.controller('ProjectsCtrl', ['$scope', 'Blog', function($scope, Blog) {
-  $scope.index = 0;
-  $scope.interval = null;
+  $scope.pages = {
+    index: 0,
+    interval: NaN
+  };
 
   $scope.isActive = function (page, index) {
-    return index == 0;
+    return index === 0;
   };
 
   Blog.projects().

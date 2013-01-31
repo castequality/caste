@@ -126,7 +126,7 @@ module.exports = function( grunt ) {
     rev: {
       js: 'scripts/**/*.js',
       css: 'styles/**/*.css',
-      img: 'images/**'
+      img: 'images/media/**'
     },
 
     // usemin handler should point to the file containing

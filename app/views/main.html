@@ -1,5 +1,5 @@
 <div id="photo-feed">
-  <a ng-repeat="photo in feed" href="{{photo.alt_sizes[1].url}}" rel="visuals">
+  <a ng-repeat="photo in feed" href="{{photo.alt_sizes[1].url}}" ui-jq="fancybox" rel="visuals">
     <img ng-src="{{photo.alt_sizes[1].url}}">
   </a>
 </div>
@@ -8,7 +8,7 @@
     <hr>
     <h4 class="post-title">
       <a ng-href="{{post.post_url}}">{{post.title}}</a>
-      <small class="post-date">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</small>
+      <span class="muted post-date">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</span>
     </h4>
     <p ng-show="post.player" class="video-player" ng-bind-html-unsafe="post.player[2].embed_code"/>
     <p ng-bind-html-unsafe="post.body || post.caption"/>
