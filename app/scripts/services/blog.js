@@ -11,6 +11,15 @@ casteApp.service('Blog', ['$http', '$q', 'API_KEY', 'WEB_ROOT', 'contributors', 
     });
   };
 
+  this.about = function () {
+    return $http.jsonp(WEB_ROOT + '/castequality.tumblr.com/info', {
+      params: {
+        api_key: API_KEY,
+        jsonp: 'JSON_CALLBACK'
+      }
+    });
+  };
+
   this.posts = function (args) {
     return this.query(WEB_ROOT + '/casteblog.tumblr.com/posts', angular.extend({}, args));
   };

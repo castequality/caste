@@ -1,5 +1,5 @@
 html {
-  overflow-y: hidden;
+  overflow-y: scroll;
 } 
 
 body {
@@ -15,6 +15,25 @@ ul, li {
 a {
   text-decoration: none;
   color: black;
+}
+
+h1.about,
+p.about {
+  align: justify;  
+}
+
+h1.about {
+  width: 100%;
+}
+
+p.about > span {
+  color: rgba(0,0,0,0.65);
+  font-weight: 600;
+}
+
+p.about {
+  font-size: 20px;
+  color: rgba(0,0,0,0.5);
 }
 
 .ui-scrollfix {
@@ -206,12 +225,17 @@ img.project-img {
 }
 
 #blog > .post > p > p > img {
-  max-width: 524px;
-  margin: 12px;
+  width: 100%;
 }
 
 .post {
   
+}
+
+.post > p,
+.post > p > p {
+  color: rgba(0,0,0,0.5);
+  font-size: 13px;
 }
 
 .post > hr {
@@ -233,8 +257,7 @@ img.project-img {
 
 .post-date {
   font-size: 12px;
-  font-weight: 600;
-  color: #AFAFAF;
+  color: rgba(0,0,0, 0.3);
   float: right;
 }
 
@@ -370,32 +393,36 @@ a:hover {
 
 .carousel-control {
   position: absolute;
-  top: 40%;
-  left: 15px;
-  width: 40px;
+//  top: 40%;
+//  left: 15px;
+//  width: 40px;
   height: 40px;
-  margin-top: -20px;
+//  margin-top: -20px;
+  margin-top: -10px;
   font-size: 60px;
   font-weight: 100;
   line-height: 30px;
-  color: #ffffff;
-  text-align: center;
-  background: #222222;
-  border: 3px solid #ffffff;
-  -webkit-border-radius: 23px;
-     -moz-border-radius: 23px;
-          border-radius: 23px;
-  opacity: 0.5;
-  filter: alpha(opacity=50);
+//  color: #ffffff;
+//  text-align: center;
+//  background: #222222;
+//  border: 3px solid #ffffff;
+//  -webkit-border-radius: 23px;
+//     -moz-border-radius: 23px;
+//          border-radius: 23px;
+//  opacity: 0.5;
+//  filter: alpha(opacity=50);
+  opacity: 0.3;
+  filter: alpha(opacity=30);
 }
 
 .carousel-control.right {
-  right: 15px;
+//  right: 15px;
+  right: 0px;
   left: auto;
 }
 
 .carousel-control:hover {
-  color: #ffffff;
+//  color: #ffffff;
   text-decoration: none;
   opacity: 0.9;
   filter: alpha(opacity=90);

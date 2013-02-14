@@ -1,6 +1,6 @@
-<carousel current-index="pages.index" interval="pages.interval">
-  <slide ng-repeat="page in project.photos" active="page.active">
+<div carousel current-index="pages.index" interval="pages.interval">
+  <div slide ng-repeat="page in project.photos" active="page.active">
     <img class="project-img" ng-src="{{page.original_size.url}}">
     <p>{{p.caption}}</p>
-  </slide>
-</carousel>
+  </div>
+</div>
