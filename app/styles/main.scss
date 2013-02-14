@@ -17,13 +17,8 @@ a {
   color: black;
 }
 
-h1.about,
-p.about {
-  align: justify;  
-}
-
 h1.about {
-  width: 100%;
+  margin: 0;
 }
 
 p.about > span {

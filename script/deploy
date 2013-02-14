@@ -5,20 +5,15 @@
 alias deploy_dir='cd ../castequality.github.com'
 DIRECTORY=$(pwd)
 
-if ! [ -d dist ]; then
-  # kill 'yeoman server' if running
-  pid=$(ps -ef | grep yeoman | grep -v grep | awk '{print $2}')
-  if [ -z "$PID" ]; then
-    printf "killing 'yeoman server'..."
-    kill $pid && printf "killed 'yeoman server'!" 
-  fi
-  # build the dist
-  yeoman build || exit 1
+# kill 'yeoman server' if running
+pid=$(ps -ef | grep yeoman | grep -v grep | awk '{print $2}')
+if ! [ -z "$pid" ]; then
+  printf "killing 'yeoman server'..."
+  kill $pid && printf "killed 'yeoman server'!" 
 fi
 
-if ! [ -d components ]; then
-  yeoman install || exit 1
-fi
+yeoman install
+yeoman build
 
 deploy_dir
 rm -rf *
