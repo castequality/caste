@@ -2,3 +2,4 @@
 temp/
 dist/
 components/
+test/spec/*.js
