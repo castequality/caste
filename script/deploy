@@ -1,0 +1,29 @@
+#!/bin/sh
+#
+#
+
+alias deploy_dir='cd ../castequality.github.com'
+DIRECTORY=$(pwd)
+
+if ! [ -d dist ]; then
+  # kill 'yeoman server' if running
+  pid=$(ps -ef | grep yeoman | grep -v grep | awk '{print $2}')
+  if [ -z "$PID" ]; then
+    printf "killing 'yeoman server'..."
+    kill $pid && printf "killed 'yeoman server'!" 
+  fi
+  # build the dist
+  yeoman build || exit 1
+fi
+
+if ! [ -d components ]; then
+  yeoman install || exit 1
+fi
+
+deploy_dir
+rm -rf *
+cp -r $DIRECTORY/dist/* .
+git add .
+DATE=`date +%Y-%m-%d`
+git commit -a -m "auto-deploy on $DATE"
+git push origin master
