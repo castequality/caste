@@ -9,7 +9,6 @@ angular.module('casteApp')
     $scope.isActive = (page, index) ->
       index is 0
 
-    Blog.projects()
-      .success (data) ->
-        $scope.project = data?.response?.posts[0]
+    Blog.projects().success (data) ->
+      $scope.project = data?.response?.posts[0]
   ]

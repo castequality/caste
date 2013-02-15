@@ -7,18 +7,15 @@ angular.module('casteApp')
     $scope.store = Store
     Store.get()
 
-    Blog.posts()
-      .success (data) ->
-        $scope.posts = data?.response?.posts || []
+    Blog.posts().success (data) ->
+      $scope.posts = data?.response?.posts || []
 
-    Blog.visuals()
-      .then (results) ->
-        for result in results
-          for post in result?.data?.response?.posts
-            for photo in post?.photos
-              $scope.feed.push(photo)
+    Blog.visuals().then (results) ->
+      for result in results
+        for post in result?.data?.response?.posts
+          for photo in post?.photos
+            $scope.feed.push(photo)
 
-    Instagram.top(INSTA_ID)
-      .success (response) ->
-        $scope.gram = response.data[0]
+    Instagram.top(INSTA_ID).success (response) ->
+      $scope.gram = response.data[0]
   ]
