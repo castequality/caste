@@ -5,3 +5,4 @@ components/
 test/spec/*.js
 app/scripts/*.js
 app/scripts/**/*.js
+*.log
