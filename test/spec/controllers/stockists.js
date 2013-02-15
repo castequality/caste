@@ -1,26 +1,26 @@
 'use strict';
 
-describe('Controller: BlogCtrl', function() {
+describe('Controller: StockistsCtrl', function() {
 
   // load the controller's module
   beforeEach(module('casteApp'));
 
-  var BlogCtrl,
-    scope, blogService, data;
+  var StockistsCtrl,
+    scope, Blog, data;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller) {
     scope = {};
-    blogService = {};
-    BlogCtrl = $controller('BlogCtrl', {
+    Blog = {};
+    StockistsCtrl = $controller('StockistsCtrl', {
       $scope: scope,
-      blogService: blogService
+      Blog: Blog
     });
   }));
 
   it('should query for the most recent posts', function() {
     // var posts = ['one,', 'two'];
-    // blogService.query = function () {
+    // Blog.query = function () {
     //   return {
     //     success: function (callback) {
     //       callback({

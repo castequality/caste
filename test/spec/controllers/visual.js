@@ -1,17 +1,17 @@
 'use strict';
 
-describe('Controller: InstagramCtrl', function() {
+describe('Controller: VisualsCtrl', function() {
 
   // load the controller's module
   beforeEach(module('casteApp'));
 
-  var InstagramCtrl,
+  var VisualsCtrl,
     scope;
 
   // Initialize the controller and a mock scope
   beforeEach(inject(function($controller) {
     scope = {};
-    InstagramCtrl = $controller('InstagramCtrl', {
+    VisualsCtrl = $controller('VisualsCtrl', {
       $scope: scope
     });
   }));

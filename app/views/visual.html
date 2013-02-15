@@ -1,0 +1,5 @@
+<div id="visuals">
+  <a ng-repeat="photo in photos" href="{{photo.alt_sizes[1].url}}" ui-jq="fancybox" rel="visuals">
+    <img ng-src="{{photo.alt_sizes[1].url}}">
+  </a>
+</div>
