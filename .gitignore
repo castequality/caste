@@ -3,3 +3,4 @@ temp/
 dist/
 components/
 test/spec/*.js
+app/scripts/*.js

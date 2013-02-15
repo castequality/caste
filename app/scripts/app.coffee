@@ -1,39 +1,29 @@
-'use strict';
+'use strict'
 
-var casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
-  .config(['$routeProvider', function($routeProvider) {
+casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
+  .config(['$routeProvider', ($routeProvider) ->
     $routeProvider
-      .when('/', {
+      .when '/', 
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
-      })
-      .when('/stockists', {
+      .when '/stockists',
         templateUrl: '/views/stockists.html',
         controller: 'StockistsCtrl'
-      })
-      .when('/project', {
+      .when '/project',
         templateUrl: '/views/projects.html',
         controller: 'ProjectsCtrl'
-      })
-      .when('/visual', {
+      .when '/visual', 
         templateUrl: 'views/visual.html',
         controller: 'VisualsCtrl'
-      })
-      .when('/about', {
+      .when '/about', 
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
-      .when('/about', {
+      .when '/about',
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  }])
-  .value('ui.config', {
-    fancybox: {
+      .otherwise redirectTo: '/'
+    ])
+  .value 'ui.config',
+    fancybox:
       'transitionIn'  : 'elastic',
       'transitionOut' : 'elastic'
-    }
-  });
