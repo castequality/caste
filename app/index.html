@@ -11,6 +11,7 @@
     <meta name="viewport" content="width=device-width"/>
     <link rel="stylesheet" href="styles/main.css"/>
     <link rel="stylesheet" href="components/angular-ui/build/angular-ui.min.css"/>
+    <link rel="stylesheet" href="components/fancybox/source/jquery.fancybox.css"/>
   </head>
   <body ng-app="casteApp">
     <!--[if lt IE 7]>
@@ -21,33 +22,29 @@
       <script src="components/es5-shim/es5-shim.js"></script>
       <script src="components/json3/lib/json3.min.js"></script>
     <![endif]-->
-
-    <div class="container-fluid" style="width: 800px; margin: auto;">
-      <div class="row-fluid">
-        <div class="span2">
-          <div ng-include src="'views/navigation.html'" ng-controller="NavigationCtrl"></div>
-        </div>
-        <div class="span10 container-fluid" ng-view/>
-      </div>
+    <div id="content">
+      <div id="header" ng-include src="'views/header.html'"></div>
+      <div class="ng-view"></div>
     </div>
-
     <script src="components/jquery/jquery.js"></script>
-    <script src="components/bootstrap/docs/assets/js/bootstrap.js"></script>
     <script src="components/angular/angular.js"></script>
-    <script src="components/modernizr/modernizr.js"></script>
+    <script src="components/fancybox/source/jquery.fancybox.js"></script>
     <script src="components/angular-ui/build/angular-ui.js"></script>
+    <script src="dependencies/bootstrap/ui-bootstrap-custom-tpls-0.1.0-SNAPSHOT.js"></script>
 
     <!-- build:js scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/filters/emphasized.js"></script>
     
-    <script src="scripts/services/blogService.js"></script>
+    <script src="scripts/services/instagram.js"></script>
+    <script src="scripts/services/store.js"></script>
+    <script src="scripts/services/blog.js"></script>
 
     <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/navigation.js"></script>
-    <script src="scripts/controllers/blog.js"></script>
-    <script src="scripts/services/instagramService.js"></script>
-    <script src="scripts/controllers/instagram.js"></script>
+    <script src="scripts/controllers/stockists.js"></script>
     <script src="scripts/controllers/projects.js"></script>
+    <script src="scripts/controllers/visual.js"></script>
+    <script src="scripts/controllers/about.js"></script>
     <!-- endbuild -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

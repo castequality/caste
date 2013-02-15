@@ -1,12 +1,12 @@
 'use strict';
 
-describe('Service: blogService', function (API_KEY, WEB_ROOT) {
+describe('Service: Blog', function (API_KEY, WEB_ROOT) {
 
   // load the service's module
   beforeEach(module('casteApp'));
 
   // instantiate service
-  var blogService, $httpBackend, injector;
+  var Blog, $httpBackend, injector;
   beforeEach(inject(function($injector) {
     injector = $injector;
   }));
@@ -16,7 +16,7 @@ describe('Service: blogService', function (API_KEY, WEB_ROOT) {
     $httpBackend.whenJSONP(WEB_ROOT + '/posts').respond({
 
     });
-    blogService = injector.get('blogService');
-    expect(blogService).toBe(true);
+    Blog = injector.get('Blog');
+    expect(Blog).toBe(true);
   });
 });
