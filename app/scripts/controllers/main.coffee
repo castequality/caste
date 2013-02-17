@@ -10,11 +10,10 @@ angular.module('casteApp')
     Blog.posts().success (data) ->
       $scope.posts = data?.response?.posts || []
 
-    Blog.visuals().then (results) ->
-      for result in results
-        for post in result?.data?.response?.posts
-          for photo in post?.photos
-            $scope.feed.push(photo)
+    Blog.feed().success (results) ->
+      for post in results?.response?.posts
+        for photo in post.photos
+          $scope.feed.push(photo)
 
     Instagram.top(INSTA_ID).success (response) ->
       $scope.gram = response.data[0]

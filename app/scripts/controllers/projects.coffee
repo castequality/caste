@@ -1,14 +1,16 @@
 'use strict'
 
 angular.module('casteApp')
-  .controller 'ProjectsCtrl', ['$scope', 'Blog', ($scope, Blog) ->
+  .controller 'ProjectsCtrl', ['$scope', '$routeParams', 'Blog', ($scope, $routeParams, Blog) ->
     $scope.pages = 
       index: 0,
       interval: NaN
 
-    $scope.isActive = (page, index) ->
-      index is 0
-
     Blog.projects().success (data) ->
-      $scope.project = data?.response?.posts[0]
-  ]
+      project = data?.response.posts?[0]
+      project.pages = project.photos
+      project.pages.push
+        media: project.caption
+        active: $routeParams.media
+      $scope.project = project
+    ]
