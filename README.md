@@ -1,16 +1,3 @@
-### Adding a Photo (Left Side Feed)
-
-Make a `photo` post on the `castequality` tumblr account. *MUST BE OF TYPE `photo`!*
-
-### Adding a Blog Post (Center Feed)
-
-Make a post on the `casteblog` tumblr account with a post type of:
-* `text`
-* `photo`
-* video`
-
-**NOTE:** other types will show up in the feed, but won't be styled correctly.
-
 ### Adding a Project (Projects Page)
 
 This is currently a hacky workaround, but seems to do ok.
@@ -31,15 +18,29 @@ To add a video, make the `photo` post as normal. You'll be adding the `vimeo` em
 
 ### Adding a Contributor to Visuals Page
 Currently, pulling from:
-* `chrismulhern.tumblr.com`
-* `zandertaketomo.tumblr.com`
+* [chrismulhern.tumblr.com](http://chrismulhern.tumblr.com)
+* [zandertaketomo.tumblr.com](http://zandertaketomo.tumblr.com)
+* [waltwolfe.tumblr.com](http://waltwolfe.tumblr.com)
 
-To add a contributor, add the `tumblr` username to the 
+To add a contributor, add the `tumblr` username (e.g. `chrismulhern` or `zandertaketomo`, not the full URL)
+to the line [here](app/scripts/services/blog.coffee#L36)
 ```
 ...
 .value('contributors', [...])
 ```
-call [here](app/scripts/services/blog.coffee#L36)
+
+### Adding a Blog Post (Center Feed)
+
+Make a post on the `casteblog` tumblr account with a post type of:
+* `text`
+* `photo`
+* `video`
+
+**NOTE:** other types will show up in the feed, but won't be styled correctly.
+
+### Adding a Photo (Left Side Feed)
+
+Make a `photo` post on the `castequality` tumblr account. *MUST BE OF TYPE `photo`!*
 
 ## Development
 
