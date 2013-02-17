@@ -40,9 +40,6 @@ p.about > span:before {
   white-space: pre;
 }
 
-.ui-scrollfix {
-}
-
 #content {
   margin: auto;
   width: 1000px;
@@ -282,6 +279,12 @@ img.project-img {
 .photo-column {
   width: 206px;
   float: left;
+}
+
+.photo-column.ui-scrollfix {
+  position: fixed;
+  margin-top: 20px;
+  margin-left: 682px;
 }
 
 .photo-column > * {

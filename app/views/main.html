@@ -14,7 +14,7 @@
     <p ng-bind-html-unsafe="post.body || post.caption"/>
   </div>
 </div>
-<div class="photo-column">
+<div class="photo-column" ui-scrollfix="138">
   <a ng-href="//castequality.bigcartel.com{{store.featured.url}}">
     <img id="featured" ng-src="{{store.featured.images[0].url}}" alt="{{store.featured.description}}">
   </a>
