@@ -295,8 +295,18 @@ img.project-img {
   position: relative;
 }
 
-a:hover > #instagram:before {
-  content: 'instagram';
+.photo-column > a > h3 {
+  display: none;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  color: white;
+  background-color: black;
+  padding: 2px 5px;
+}
+
+.photo-column > a:hover > h3 {
+  display: block;
 }
 
 #instagram {
