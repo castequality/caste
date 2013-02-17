@@ -135,6 +135,15 @@ p.about > span:before {
   display: table;
 }
 
+ul.projects {
+  margin-bottom: 20px;
+}
+
+li.project {
+  display: inline;
+  list-style-type: none;
+}
+
 .item > p,
 .item > p > p {
   margin: -1px 0;
