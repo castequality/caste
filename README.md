@@ -55,6 +55,7 @@ Make a `photo` post on the `castequality` tumblr account. *MUST BE OF TYPE `phot
 ### Deployment
 
 * When you're ready to deploy, run the following:
+
 ```bash
   # move into the root directory (replace with the path to your checkout)
   cd ~/path/to/caste
