@@ -1,4 +1,4 @@
-<carousel current-index="pages.index" interval="pages.interval">
+<carousel interval="pages.interval">
   <slide ng-repeat="page in project.pages" active="page.active">
     <img ui-if="page.original_size" class="project-img" ng-src="{{page.original_size.url}}">
     <p ui-if="page.media" ng-bind-html-unsafe="page.media">

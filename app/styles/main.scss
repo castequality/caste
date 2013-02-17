@@ -148,6 +148,8 @@ img.project-img {
 .ng-view {
   margin-left: 92px;
   margin-right: 20px;
+  overflow: hidden;
+  clear: both;
 }
 
 .ng-view:after {
@@ -331,7 +333,7 @@ a:hover {
 
 .carousel {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 32px;
   line-height: 1;
 }
 
