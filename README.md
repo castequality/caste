@@ -29,7 +29,7 @@ To add a video, make the `photo` post as normal. You'll be adding the `vimeo` em
 * Back in the `tumblr` photo post editor, click on the `<html>` button (should be in the top right of the editor's buttons)
 * Paste the `embed` code and submit the post 
 
-# Adding a Contributor to Visuals Page
+### Adding a Contributor to Visuals Page
 Currently, pulling from:
 * `chrismulhern.tumblr.com`
 * `zandertaketomo.tumblr.com`
