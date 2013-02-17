@@ -285,7 +285,7 @@ img.project-img {
 
 .photo-column.ui-scrollfix {
   position: fixed;
-  margin-top: 20px;
+  margin-top: -138px;
   margin-left: 682px;
 }
 
@@ -293,6 +293,10 @@ img.project-img {
   display: block;
   margin-bottom: 20px;
   position: relative;
+}
+
+a:hover > #instagram:before {
+  content: 'instagram';
 }
 
 #instagram {
