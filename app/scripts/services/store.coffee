@@ -4,8 +4,7 @@ angular.module('casteApp')
   .service('Store', ['Math', '$http', 'STORE_ROOT', (Math, $http, STORE_ROOT) ->
     @get = () =>
       params = callback: 'JSON_CALLBACK'
-      $http.jsonp(STORE_ROOT, params: params)
-      .success (data) =>
+      $http.jsonp(STORE_ROOT, params: params).success (data) =>
         index = Math.random() * data.length
         @featured = data[Math.floor(index)]
   ])

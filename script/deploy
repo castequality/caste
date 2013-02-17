@@ -2,7 +2,15 @@
 #
 #
 
-alias deploy_dir='cd ../castequality.github.com'
+DEPLOY_REPO=castequality.github.com
+DEPLOY_TO="../$DEPLOY_REPO"
+if ! [ -d  $DEPLOY_TO ]; then
+  printf "Missing deploy repo! Checking out from git..."
+  git clone https://github.com/castequality/$DEPLOY_REPO $DEPLOY_TO
+  printf "Checked out! Moving on..."
+fi
+
+alias deploy_dir='cd $DEPLOY_TO'
 DIRECTORY=$(pwd)
 
 # kill 'yeoman server' if running
