@@ -245,6 +245,14 @@ img.project-img {
   width: 100%;
 }
 
+#blog > .post > img {
+  width: 100%;
+}
+
+.fancybox-outer > .fancybox-inner > img {
+  overflow-y: hidden;
+}
+
 .post > p,
 .post > p > p {
   color: rgba(0,0,0,0.5);

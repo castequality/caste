@@ -12,6 +12,7 @@
     </h4>
     <p ng-show="post.player" class="video-player" ng-bind-html-unsafe="post.player[2].embed_code"/>
     <p ng-bind-html-unsafe="post.body || post.caption"/>
+    <img ng-repeat="photo in post.photos" ng-src="{{photo.alt_sizes[0].url}}">
   </div>
 </div>
 <div class="photo-column" ui-scrollfix="138">
