@@ -40,6 +40,11 @@ p.about > span:before {
   white-space: pre;
 }
 
+.rollover:hover > * {
+  // display: none;
+  opacity: 0;
+}
+
 #content {
   margin: auto;
   width: 1000px;
@@ -60,9 +65,20 @@ p.about > span:before {
   clear: both;
 }
 
-#banner {
+#banner > a {
+  position: relative;
+  opacity: 1;
+  filter:Alpha(opacity=100);
+}
+
+#banner > a > * {
   width: 750px;
+  height: 118px;
   margin-right: 0;
+}
+
+#banner > a > * {
+  position: absolute;
 }
 
 #logo > svg {

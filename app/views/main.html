@@ -7,7 +7,7 @@
   <div ng-repeat="post in posts" class="post">
     <hr>
     <h4 class="post-title">
-      <a ng-href="{{post.post_url}}">{{post.title}}</a>
+      <span>{{post.title}}</span>
       <span class="muted post-date">{{post.timestamp * 1000 | date:'longDate' | uppercase}}</span>
     </h4>
     <p ng-show="post.player" class="video-player" ng-bind-html-unsafe="post.player[2].embed_code"/>
