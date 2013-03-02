@@ -1,12 +1,12 @@
+<carousel interval="pages.interval">
+  <slide ng-repeat="page in get(p).pages" active="page.active">
+    <img ui-if="page.original_size" class="project-img" ng-src="{{page.original_size.url}}">
+    <p ui-if="page.media" ng-bind-html-unsafe="page.media"/>
+  </slide>
+</carousel>
 <ul class="projects">
   <li class="project" ng-repeat="(key, project) in projects">
     <a ng-href="#/project?p={{key}}">{{key * 1000 | date:'MM/yy'}}</a>
     <span ui-if="!$last">&gt;</span>
   </li>
 </ul>
-<carousel interval="pages.interval">
-  <slide ng-repeat="page in get(p).pages" active="page.active">
-    <img ui-if="page.original_size" class="project-img" ng-src="{{page.original_size.url}}">
-    <p ui-if="page.media" ng-bind-html-unsafe="page.media">
-  </slide>
-</carousel>

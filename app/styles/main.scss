@@ -40,9 +40,27 @@ p.about > span:before {
   white-space: pre;
 }
 
-.rollover:hover > * {
-  // display: none;
+.rollover {
+  position: relative;
+}
+
+.rollover > * {
+  position: absolute;
+}
+
+// .rollover:hover > * {
+//   opacity: 0;
+//   filter:Alpha(opacity=0);
+// }
+
+.hover {
+  opacity: 100;
+  filter:Alpha(opacity=100);
+}
+
+.rollover > .hover:hover {
   opacity: 0;
+  filter:Alpha(opacity=0);
 }
 
 #content {
@@ -81,8 +99,15 @@ p.about > span:before {
   position: absolute;
 }
 
-#logo > svg {
-  cursor: pointer; cursor: hand;
+#logo {
+  position: relative;
+  height: 118px;
+  width: 118px;
+}
+
+#logo > * {
+  position: absolute;
+  margin: 0;
 }
 
 #links {
@@ -152,6 +177,7 @@ p.about > span:before {
 }
 
 ul.projects {
+  margin-top: 5px;
   margin-bottom: 20px;
 }
 
@@ -312,7 +338,7 @@ img.project-img {
 }
 
 .photo-column {
-  width: 206px;
+  width: 205px;
   float: left;
 }
 
@@ -324,30 +350,19 @@ img.project-img {
 
 .photo-column > * {
   display: block;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
   position: relative;
 }
 
-.photo-column > a > h3 {
-  display: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  color: white;
-  background-color: black;
-  padding: 2px 5px;
-}
-
-.photo-column > a:hover > h3 {
-  display: block;
-}
-
-#instagram {
+#instagram,
+#instagram-hover {
   height: 206px;
   width: 206px;
+  margin-top: 310px;
 }
 
-#featured {
+#featured,
+#featured-hover {
   height: 310px;
   width: 206px;
 }
@@ -444,13 +459,13 @@ a:hover {
 
 .carousel-control {
   position: absolute;
+  cursor: pointer;
 //  top: 40%;
 //  left: 15px;
 //  width: 40px;
   height: 40px;
-//  margin-top: -20px;
   margin: 0;
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 100;
   line-height: 30px;
 //  color: #ffffff;
