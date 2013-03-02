@@ -40,6 +40,24 @@ p.about > span:before {
   white-space: pre;
 }
 
+.rollover {
+  position: relative;
+}
+
+.rollover > * {
+  position: absolute;
+}
+
+.hover {
+  opacity: 100;
+  filter:Alpha(opacity=100);
+}
+
+.rollover > .hover:hover {
+  opacity: 0;
+  filter:Alpha(opacity=0);
+}
+
 #content {
   margin: auto;
   width: 1000px;
@@ -60,13 +78,31 @@ p.about > span:before {
   clear: both;
 }
 
-#banner {
+#banner > a {
+  position: relative;
+  opacity: 1;
+  filter:Alpha(opacity=100);
+}
+
+#banner > a > * {
   width: 750px;
+  height: 118px;
   margin-right: 0;
 }
 
-#logo > svg {
-  cursor: pointer; cursor: hand;
+#banner > a > * {
+  position: absolute;
+}
+
+#logo {
+  position: relative;
+  height: 118px;
+  width: 118px;
+}
+
+#logo > * {
+  position: absolute;
+  margin: 0;
 }
 
 #links {
@@ -133,6 +169,16 @@ p.about > span:before {
 #project:after {
   clear: both;
   display: table;
+}
+
+ul.projects {
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+li.project {
+  display: inline;
+  list-style-type: none;
 }
 
 .item > p,
@@ -236,6 +282,14 @@ img.project-img {
   width: 100%;
 }
 
+#blog > .post > img {
+  width: 100%;
+}
+
+.fancybox-outer > .fancybox-inner > img {
+  overflow-y: hidden;
+}
+
 .post > p,
 .post > p > p {
   color: rgba(0,0,0,0.5);
@@ -279,7 +333,7 @@ img.project-img {
 }
 
 .photo-column {
-  width: 206px;
+  width: 205px;
   float: left;
 }
 
@@ -295,27 +349,16 @@ img.project-img {
   position: relative;
 }
 
-.photo-column > a > h3 {
-  display: none;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  color: white;
-  background-color: black;
-  padding: 2px 5px;
-}
-
-.photo-column > a:hover > h3 {
-  display: block;
-}
-
-#instagram {
+#instagram,
+#instagram-hover {
   height: 206px;
   width: 206px;
+  margin-top: 310px;
 }
 
-#featured {
-  height: 244px;
+#featured,
+#featured-hover {
+  height: 310px;
   width: 206px;
 }
 
@@ -411,13 +454,13 @@ a:hover {
 
 .carousel-control {
   position: absolute;
+  cursor: pointer;
 //  top: 40%;
 //  left: 15px;
 //  width: 40px;
   height: 40px;
-//  margin-top: -20px;
   margin: 0;
-  font-size: 60px;
+  font-size: 30px;
   font-weight: 100;
   line-height: 30px;
 //  color: #ffffff;

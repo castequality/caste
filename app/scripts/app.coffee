@@ -24,6 +24,8 @@ casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
       .otherwise redirectTo: '/'
     ])
   .value 'ui.config',
-    fancybox:
-      'transitionIn'  : 'elastic',
-      'transitionOut' : 'elastic'
+    jq:
+      fancybox:
+        autoHeight: true
+        autoWidth: true
+        scrolling: no

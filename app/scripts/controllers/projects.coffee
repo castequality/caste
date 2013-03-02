@@ -6,11 +6,25 @@ angular.module('casteApp')
       index: 0,
       interval: NaN
 
+    $scope.p = $routeParams.p
+
     Blog.projects().success (data) ->
-      project = data?.response.posts?[0]
-      project.pages = project.photos
-      project.pages.push
-        media: project.caption
-        active: $routeParams.media
-      $scope.project = project
-    ]
+      $scope.projects = {}
+      for post in data?.response.posts
+        post.pages = post.photos
+        post.pages.push
+          media: post.caption
+          active: $routeParams.media
+        $scope.projects[post.timestamp] = post
+
+    $scope.timestamp = (key) ->
+      unless timestamp?
+        keys = []
+        for key of $scope.projects
+          keys.push(key)
+        timestamp = Math.max keys
+
+
+    $scope.get = (timestamp) ->
+      $scope.projects?[timestamp] || $scope.projects?[$scope.timestamp()]
+  ]
