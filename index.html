@@ -1,0 +1,113 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Caste by castequality</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Caste</h1>
+        <p>Create and Silence the Echos</p>
+
+        <p class="view"><a href="https://github.com/castequality/caste">View the Project on GitHub <small>castequality/caste</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/castequality/caste/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/castequality/caste/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/castequality/caste">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h3>Adding a Project (Projects Page)</h3>
+
+<p>This is currently a hacky workaround, but seems to do ok.
+Make a <code>photo</code> tumblr post to <code>casteproject</code> tumblr account. Each <code>photo</code> added will be 
+its own slide on the <code>#/project</code> page. </p>
+
+<h4>Adding a Video</h4>
+
+<p>To add a video, make the <code>photo</code> post as normal. You'll be adding the <code>vimeo</code> embed link as the <code>post</code> caption by:</p>
+
+<ul>
+<li>Going to the <code>vimeo</code> page for the video.</li>
+<li>Click on the <code>share</code> overlay within the video's frame.</li>
+<li>Click on <code>show options</code> under the <code>Embed</code> header of the popup</li>
+<li>Set the size to 888 x 500</li>
+<li>Uncheck all of the boxes (no protrait, byline, text underneath video, etc)</li>
+<li>Copy the mark-up from the <code>Embed</code> box</li>
+<li>Back in the <code>tumblr</code> photo post editor, click on the <code>&lt;html&gt;</code> button (should be in the top right of the editor's buttons)</li>
+<li>Paste the <code>embed</code> code and submit the post </li>
+</ul><h3>Adding a Contributor to Visuals Page</h3>
+
+<p>Currently, pulling from:</p>
+
+<ul>
+<li><a href="http://chrismulhern.tumblr.com">chrismulhern.tumblr.com</a></li>
+<li><a href="http://zandertaketomo.tumblr.com">zandertaketomo.tumblr.com</a></li>
+<li><a href="http://waltwolfe.tumblr.com">waltwolfe.tumblr.com</a></li>
+</ul><p>To add a contributor, add the <code>tumblr</code> username (e.g. <code>chrismulhern</code> or <code>zandertaketomo</code>, not the full URL)
+to the line <a href="app/scripts/services/blog.coffee#L36">here</a></p>
+
+<pre><code>...
+.value('contributors', [...])
+</code></pre>
+
+<h3>Adding a Blog Post (Center Feed)</h3>
+
+<p>Make a post on the <code>casteblog</code> tumblr account with a post type of:</p>
+
+<ul>
+<li><code>text</code></li>
+<li><code>photo</code></li>
+<li><code>video</code></li>
+</ul><p><strong>NOTE:</strong> other types will show up in the feed, but won't be styled correctly.</p>
+
+<h3>Adding a Photo (Left Side Feed)</h3>
+
+<p>Make a <code>photo</code> post on the <code>castequality</code> tumblr account. <em>MUST BE OF TYPE <code>photo</code>!</em></p>
+
+<h2>Development</h2>
+
+<ul>
+<li>Developed on top of <a href="http://angularjs.org">AngularJS</a>
+</li>
+<li>Built with <a href="http://yeoman.io">Yeoman</a>
+
+<ul>
+<li>
+<b>Yeoman Installation</b>: <br>
+Follow the steps <a href="http://yeoman.io/installation.html">here</a>
+Once you have <b>Yeoman</b>, open a command prompt, run <code>cd ~/folder/with/caste</code> to move into the root directory, 
+then <code>yeoman server</code> to open a browser pointed to the home page. Thanks to <b>Yeoman</b>, any changes to a
+<code>.coffee</code>, <code>.css</code>, or <code>.html</code> file will trigger a reload in the browser.</li>
+</ul>
+</li>
+</ul><h3>Deployment</h3>
+
+<ul>
+<li>When you're ready to deploy, run the following:</li>
+</ul><div class="highlight"><pre>  <span class="c"># move into the root directory (replace with the path to your checkout)</span>
+  <span class="nb">cd</span> ~/path/to/caste
+  <span class="c"># run the deployment script</span>
+  script/deploy
+</pre></div>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/castequality">castequality</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
