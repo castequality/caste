@@ -18,11 +18,11 @@ casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
       .when '/about', 
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      .when '/about',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
       .otherwise redirectTo: '/'
     ])
+  .factory('Modernizr', ['$window', ($window) ->
+    $window.Modernizr
+  ])
   .value 'ui.config',
     jq:
       fancybox:

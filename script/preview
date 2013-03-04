@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# builds if not already built
+if ! [ -d dist ]; then
+  yeoman build
+fi
+
+# previews the files in dist/
+yeoman server:dist
