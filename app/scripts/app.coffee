@@ -20,9 +20,6 @@ casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
         controller: 'AboutCtrl'
       .otherwise redirectTo: '/'
     ])
-  .factory('Modernizr', ['$window', ($window) ->
-    $window.Modernizr
-  ])
   .value 'ui.config',
     jq:
       fancybox:

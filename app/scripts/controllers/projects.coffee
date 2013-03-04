@@ -12,9 +12,10 @@ angular.module('casteApp')
       $scope.projects = {}
       for post in data?.response.posts
         post.pages = post.photos
-        post.pages.push
-          media: post.caption
-          active: $routeParams.media
+        if post.caption?.length
+          post.pages.push
+            media: post.caption
+            active: $routeParams.media
         $scope.projects[post.timestamp] = post
 
     $scope.timestamp = (key) ->
