@@ -18,9 +18,6 @@ casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
       .when '/about', 
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
-      .when '/about',
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
       .otherwise redirectTo: '/'
     ])
   .value 'ui.config',

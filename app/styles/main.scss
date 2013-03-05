@@ -40,10 +40,6 @@ p.about > span:before {
   white-space: pre;
 }
 
-.rollover {
-  position: relative;
-}
-
 .rollover > * {
   position: absolute;
 }
@@ -79,7 +75,8 @@ p.about > span:before {
 }
 
 #banner > a {
-  position: relative;
+  // position: relative;
+  height: 0;
   opacity: 1;
   filter:Alpha(opacity=100);
 }
@@ -105,8 +102,14 @@ p.about > span:before {
   margin: 0;
 }
 
+#logo > a > * {
+  height: 118px;
+  width: 118px;
+}
+
 #links {
   width: 72px;
+  height: 118px;
 }
 
 #links > :first-child {
@@ -381,7 +384,8 @@ p, h1, h2, h3, h4, h5, a {
   font-family: Courier New, Courier;
 }
 
-a:hover {
+#visuals > a:hover,
+#photo-feed > a:hover {
   opacity: 0.9;
   filter:Alpha(opacity=90);
 }
