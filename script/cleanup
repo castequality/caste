@@ -1,7 +1,0 @@
-#!/usr/bin/env ruby
-#
-# cleanup .js files
-
-Dir.glob("app/scripts/**/*.js").each do |f|
-  File.unlink(f);
-end

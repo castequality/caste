@@ -1,8 +1,6 @@
 .sass-cache/
-temp/
+.tmp/
 dist/
-components/
-test/spec/*.js
-app/scripts/*.js
-app/scripts/**/*.js
+app/components/
+node_modules/
 *.log

@@ -1,7 +1,7 @@
 'use strict'
 
 casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
-  .config(['$routeProvider', ($routeProvider) ->
+  .config(($routeProvider) ->
     $routeProvider
       .when '/', 
         templateUrl: '/views/main.html',
@@ -19,7 +19,7 @@ casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       .otherwise redirectTo: '/'
-    ])
+    )
   .value 'ui.config',
     jq:
       fancybox:

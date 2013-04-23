@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('casteApp')
-  .controller('StockistsCtrl', ['$scope', 'Blog', 'Instagram', ($scope, Blog, Instagram) ->
+  .controller 'StockistsCtrl', ($scope, Blog, Instagram) ->
     $scope.cards =
       37432817:
         name: 'Exit Skate Supply'
@@ -31,4 +31,3 @@ angular.module('casteApp')
         Instagram.top(id).success (response) ->
           stockist.thumb = response?.data[0]?.images?.standard_resolution?.url
           stockist.style = 'background-image': "url('#{stockist.thumb}')"
-  ])

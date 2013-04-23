@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('casteApp')
-  .service('Blog', ['$http', '$q', 'API_KEY', 'WEB_ROOT', 'contributors', ($http, $q, API_KEY, WEB_ROOT, contributors) ->
+  .service('Blog', ($http, $q, API_KEY, WEB_ROOT, contributors) ->
     @about = () =>
       $http.jsonp "#{WEB_ROOT}/castequality.tumblr.com/info", 
         params: 
@@ -30,7 +30,7 @@ angular.module('casteApp')
         args.type = 'photo'
         promises.push @query contributor, args
       $q.all promises
-  ])
+  )
 .value('API_KEY', 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0')
 .value('WEB_ROOT', '//api.tumblr.com/v2/blog')
 .value('contributors', ['zandertaketomo', 'chrismulhern', 'waltwolfe'])

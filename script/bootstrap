@@ -1,0 +1,21 @@
+#!/bin/sh
+#
+# bootstrap
+
+set -e
+
+echo "Setting up dependencies..."
+
+! [ $(which npm) ] && echo "Missing npm!" && exit 1
+
+for pkg in yo bower karma; do
+  ! [ $(which $pkg) ] && npm install -g $pkg > /dev/null 2>&1
+done
+
+! [ $(which grunt) ] && npm install -g grunt-cli > /dev/null 2>&1
+
+[ $(which nodenv) ] && nodenv rehash
+
+npm install && bower install
+
+echo "Done!"

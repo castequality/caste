@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# clean
+
+for dir in app/components node_modules .tmp; do
+  rm -rf $dir
+done

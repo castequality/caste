@@ -2,8 +2,8 @@
 
 # builds if not already built
 if ! [ -d dist ]; then
-  yeoman build
+  grunt build
 fi
 
 # previews the files in dist/
-yeoman server:dist
+grunt server:dist

@@ -1,7 +1,7 @@
 'use strict'
 
 angular.module('casteApp')
-  .controller 'ProjectsCtrl', ['$scope', '$routeParams', 'Blog', ($scope, $routeParams, Blog) ->
+  .controller 'ProjectsCtrl', ($scope, $routeParams, Blog) ->
     $scope.pages = 
       index: 0,
       interval: NaN
@@ -28,4 +28,3 @@ angular.module('casteApp')
 
     $scope.get = (timestamp) ->
       $scope.projects?[timestamp] || $scope.projects?[$scope.timestamp()]
-  ]

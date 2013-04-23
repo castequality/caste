@@ -1,29 +1,24 @@
-// base path, that will be used to resolve files and exclude
-basePath = '../';
+// Karma configuration
 
-preprocessors = {
-  '**/*.coffee': 'coffee'
-};
+// base path, that will be used to resolve files and exclude
+basePath = '';
 
 // list of files / patterns to load in the browser
 files = [
-  MOCHA,
-  MOCHA_ADAPTER,
-  'node_modules/chai/chai.js',
-  'test/lib/sinon-chai.js',
-  'test/lib/sinon.js',
-  'test/lib/jquery.js',
-  'test/lib/angular.js',
-  'test/lib/angular-mocks.js',
-  'src/**/*.coffee',
-  'test/**/test_*.coffee'
+  JASMINE,
+  JASMINE_ADAPTER,
+  'app/components/angular/angular.js',
+  'app/components/angular-resource/angular-resource.js',
+  'app/components/angular-mocks/angular-mocks.js',
+  '.tmp/scripts/*.js',
+  '.tmp/spec/*.js'
 ];
 
 // list of files to exclude
-exclude = ['*.swp', '*~'];
+exclude = [];
 
 // test results reporter to use
-// possible values: 'dots', 'progress', 'junit'
+// possible values: dots || progress || growl
 reporters = ['progress'];
 
 // web server port
@@ -50,7 +45,7 @@ autoWatch = true;
 // - Safari (only Mac)
 // - PhantomJS
 // - IE (only Windows)
-browsers = ['PhantomJS', 'Chrome'];
+browsers = ['PhantomJS'];
 
 // If browser does not capture in given timeout [ms], kill it
 captureTimeout = 5000;

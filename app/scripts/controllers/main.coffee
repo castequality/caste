@@ -2,7 +2,7 @@
 
 angular.module('casteApp')
   .value('INSTA_ID', 259689659)
-  .controller 'MainCtrl', ['$scope', 'Blog', 'Instagram', 'Store', 'INSTA_ID', ($scope, Blog, Instagram, Store, INSTA_ID) ->
+  .controller 'MainCtrl', ($scope, Blog, Instagram, Store, INSTA_ID) ->
     $scope.feed = []
     $scope.store = Store
     Store.get()
@@ -17,4 +17,3 @@ angular.module('casteApp')
 
     Instagram.top(INSTA_ID).success (response) ->
       $scope.gram = response.data[0]
-  ]
