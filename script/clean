@@ -2,6 +2,6 @@
 #
 # clean
 
-for dir in app/components node_modules .tmp; do
+for dir in app/components node_modules .tmp dist; do
   rm -rf $dir
 done
