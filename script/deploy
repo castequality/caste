@@ -1,6 +1,8 @@
 #!/bin/sh
 #
-#
+# deploy to gh-pages
+
+set -e
 
 DEPLOY_REPO=castequality.github.com
 DEPLOY_TO="../$DEPLOY_REPO"
@@ -13,15 +15,16 @@ fi
 alias deploy_dir='cd $DEPLOY_TO'
 DIRECTORY=$(pwd)
 
-# kill 'yeoman server' if running
-pid=$(ps -ef | grep yeoman | grep -v grep | awk '{print $2}')
+# kill 'grunt server' if running
+pid=$(ps -ef | grep grunt | grep -v grep | awk '{print $2}')
 if ! [ -z "$pid" ]; then
-  printf "killing 'yeoman server'..."
-  kill $pid && printf "killed 'yeoman server'!" 
+  printf "killing 'grunt server'..."
+  kill $pid && printf "killed 'grunt server'!" 
 fi
 
-yeoman install
-yeoman build
+script/bootstrap
+
+grunt build
 
 deploy_dir
 rm -rf *

@@ -102,12 +102,12 @@ module.exports = function (grunt) {
     coffee: {
       dist: {
         files: {
-          '.tmp/scripts/coffee.js': '<%= yeoman.app %>/scripts/**/*.coffee'
+          '.tmp/scripts/scripts.js': '<%= yeoman.app %>/scripts/**/*.coffee'
         }
       },
       test: {
         files: {
-          '.tmp/spec/coffee.js': 'test/**/*.coffee'
+          '.tmp/spec/scripts.js': 'test/**/*.coffee'
         }
       }
     },
@@ -167,9 +167,9 @@ module.exports = function (grunt) {
       dist: {
         options: {
           removeCommentsFromCDATA: true,
-          collapseWhitespace: true,
+          // collapseWhitespace: true,
           collapseBooleanAttributes: true,
-          removeAttributeQuotes: true,
+          // removeAttributeQuotes: true,
           removeRedundantAttributes: true,
           useShortDoctype: true,
           removeEmptyAttributes: true,
@@ -217,6 +217,7 @@ module.exports = function (grunt) {
           src: [
             '*.{ico,txt}',
             '.htaccess',
+            'CNAME',
             'components/**/*'
           ]
         }]
@@ -267,8 +268,8 @@ module.exports = function (grunt) {
     'copy',
     'cdnify',
     'usemin',
-    'ngmin',
-    'uglify'
+    'ngmin'//,
+    // 'uglify'
   ]);
 
   grunt.registerTask('default', ['build']);
