@@ -4,3 +4,4 @@ dist/
 app/components/
 node_modules/
 *.log
+.ruby-version

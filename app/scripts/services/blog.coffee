@@ -28,6 +28,7 @@ angular.module('casteApp')
       promises = []
       for contributor in contributors
         args.type = 'photo'
+        args.tag = 'castequality'
         promises.push @query contributor, args
       $q.all promises
   )
