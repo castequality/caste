@@ -1,0 +1,22 @@
+p.about {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(0,0,0,0.5);
+  width: 36em;
+}
+
+p.about-title {
+  font-size: 14px;
+  padding: 4px 0;
+  font-weight: 600;
+}
+
+p.about > span {
+  color: black;
+  font-weight: 600;
+}
+
+p.about > span:before {
+  content: '\A\A';
+  white-space: pre;
+}

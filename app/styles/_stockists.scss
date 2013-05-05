@@ -1,0 +1,60 @@
+.stockists > * {
+  border: solid 1px #CCC;
+}
+
+.stockists > a > div {
+  float: left;
+  width: 206px;
+  height: 206px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-position: center;
+  background-size: 100%;
+  vertical-align: text-bottom;
+}
+
+.stockists > a:nth-child(4n + 0) > div {
+  margin-right: 0;
+}
+
+.stockists:after {
+  display: table;
+  clear: both;
+}
+
+.stockist > h4,
+.stockist > p {
+  color: white;
+  background-color: black;
+  padding: 0;
+  margin: 0;
+  float: right;
+  font-weight: 600;
+}
+
+.stockist > h4 {
+  font-size: 18px;
+  padding: 5px;
+  margin-top: 100px;
+}
+
+.stockist > p {
+  display: none;
+  width: 100%;
+  text-align: right;
+  font-size: 13px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 2px;
+}
+
+.stockist:hover > p {
+  display: block;
+}
+
+.stockist:nth-child(4n) {
+  background-color: gray;
+  margin-right: 0;
+}

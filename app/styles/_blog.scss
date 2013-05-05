@@ -1,0 +1,47 @@
+#blog {
+  width: 524px;
+  margin-right: 20px;
+  float: left;
+}
+
+#blog > .post > .video-player {
+  padding: 0 12px 0 12px;
+}
+
+#blog > .post > p > p > img {
+  width: 100%;
+}
+
+#blog > .post > img {
+  width: 100%;
+}
+
+.post {
+  & > p,
+  & > p > p {
+    color: rgba(0,0,0,0.5);
+    font-size: 13px;
+  }
+}
+
+.post > hr,
+.post-title {
+  margin: 0;
+}
+
+.post-title {
+  & > a {
+    color: black;
+
+    &:hover {
+    color: gray;
+    text-decoration: none;
+    }
+  }
+}
+
+.post-date {
+  font-size: 12px;
+  color: rgba(0,0,0, 0.3);
+  float: right;
+}

@@ -1,0 +1,103 @@
+
+$photoColumnWidth: 206px;
+
+$featuredHeight: 310px;
+$instaHeight: $photoColumnWidth;
+
+$mediaLinkSize: 40px;
+
+$mediaLinksMarginTop: $featuredHeight + $instaHeight;
+
+$brainCircleMarginTop: $mediaLinksMarginTop + 20px;
+
+#photo-feed {
+  width: 118px;
+  margin-right: 20px;
+  float: left;
+
+  & > *,
+  & > a > img {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+
+  & > :last-child {
+    margin-bottom: 0;
+  }
+}
+
+.photo-column {
+  width: 205px;
+  float: left;
+
+  &.ui-scrollfix {
+    position: fixed;
+    margin-top: -138px;
+    margin-left: 682px;
+  }
+
+  & > * {
+    display: block;
+    margin-bottom: 20px;
+    position: relative;
+  }
+}
+
+.rollover > * {
+  position: absolute;
+}
+
+.hover {
+  opacity: 100;
+  filter:Alpha(opacity=100);
+}
+
+.rollover > .hover:hover {
+  opacity: 0;
+  filter:Alpha(opacity=0);
+}
+
+#instagram,
+#instagram-hover {
+  height: $photoColumnWidth;
+  width: $photoColumnWidth;
+  margin-top: $featuredHeight;
+}
+
+#featured,
+#featured-hover {
+  height: $featuredHeight;
+  width: $photoColumnWidth;
+}
+
+#media-links {
+  top: $mediaLinksMarginTop + 20px;
+
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid rgba(0, 0, 0, .5);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+
+  & > a {
+    display: inline;
+
+    margin-left: 0;
+    margin-right: 5px;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+
+  & > a > img {
+    width: $mediaLinkSize;
+    height: $mediaLinkSize;
+  }
+}
+
+#circle-logo {
+  top: $brainCircleMarginTop;
+  height: $photoColumnWidth;
+  width: $photoColumnWidth;
+}
