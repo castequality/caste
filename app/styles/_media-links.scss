@@ -90,9 +90,15 @@ $brainCircleMarginTop: $mediaLinksMarginTop + 20px;
     }
   }
 
-  & > a > img {
-    width: $mediaLinkSize;
-    height: $mediaLinkSize;
+  & > a {
+    &:hover > img {
+      opacity: 0.75;
+    }
+
+    & > img {
+      width: $mediaLinkSize;
+      height: $mediaLinkSize;
+    }
   }
 }
 
