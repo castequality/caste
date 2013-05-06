@@ -8,7 +8,7 @@ $mediaLinkSize: 40px;
 
 $mediaLinksMarginTop: $featuredHeight + $instaHeight;
 
-$brainCircleMarginTop: $mediaLinksMarginTop + 20px;
+$brainCircleMarginTop: $mediaLinksMarginTop + 12px;
 
 #photo-feed {
   width: 118px;
@@ -71,11 +71,11 @@ $brainCircleMarginTop: $mediaLinksMarginTop + 20px;
 }
 
 #media-links {
-  top: $mediaLinksMarginTop + 20px;
+  top: $mediaLinksMarginTop + 16px;
 
-  padding-bottom: 20px;
+  padding-bottom: 16px;
 
-  border-bottom: 2px solid rgba(0, 0, 0, .5);
+  border-bottom: 1px solid rgba(0, 0, 0, .4);
   -webkit-background-clip: padding-box; /* for Safari */
   background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
 
