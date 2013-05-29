@@ -1,8 +1,10 @@
+$header-height: 118px;
+
 #header {
   & > * {
     float: left;
-    height: 118px;
-    margin: 20px;
+    height: $header-height;
+    margin: $content-margin;
     margin-left: 0;
   }
 
@@ -26,7 +28,7 @@
     & > * {
       position: absolute;
       width: 750px;
-      height: 118px;
+      height: $header-height;
       margin-right: 0;
     }
   }
@@ -34,38 +36,41 @@
 
 #logo {
   position: relative;
-  height: 118px;
-  width: 118px;
+  height: $header-height;
+  width: $header-height;
 
   & > * {
     position: absolute;
     margin: 0;
   }
 
-  & > a {
-    & > * {
-      height: 118px;
-      width: 118px;
+  a {
+    img {
+      height: $header-height;
+      width: $header-height;
     }
   }
 }
 
 #links {
-  width: 72px;
-  height: 118px;
+  $link-padding: 14px;
+  $link-width: 72px;
 
-  &:first-child {
-    margin-top: 14px;
-  }
-
-  &:last-child {
-    margin-bottom: 14px;
-  }
+  width: $link-width;
+  height: $header-height;
 
   & > li {
-    width: 72px;
+    width: $link-width;
     height: 18px;
     text-align: right;
+
+    &:first-of-type {
+      margin-top: $link-padding;
+    }
+
+    &:last-of-type {
+      margin-bottom: $link-padding;
+    }
 
     & > a {
       font-weight: bold;

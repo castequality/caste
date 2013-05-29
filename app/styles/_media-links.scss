@@ -1,17 +1,17 @@
-$photoColumnWidth: 206px;
+$photo-column-width: 206px;
 
-$featuredHeight: 310px;
-$instaHeight: $photoColumnWidth;
+$featured-height: 310px;
+$insta-height: $photo-column-width;
 
-$mediaLinkSize: 40px;
+$media-link-size: 40px;
 
-$mediaLinksMarginTop: $featuredHeight + $instaHeight;
+$media-links-margin: $featured-height + $insta-height;
 
-$brainCircleMarginTop: $mediaLinksMarginTop + 12px;
+$brain-circle-margin: $media-links-margin + 12px;
 
 #photo-feed {
-  width: 118px;
-  margin-right: 20px;
+  width: $header-height;
+  margin-right: $content-margin;
   float: left;
 
   & > *,
@@ -37,26 +37,26 @@ $brainCircleMarginTop: $mediaLinksMarginTop + 12px;
 
   & > * {
     display: block;
-    margin-bottom: 20px;
+    margin-bottom: $content-margin;
     position: relative;
   }
 }
 
 #instagram,
 #instagram-hover {
-  height: $photoColumnWidth;
-  width: $photoColumnWidth;
-  margin-top: $featuredHeight;
+  height: $photo-column-width;
+  width: $photo-column-width;
+  margin-top: $featured-height;
 }
 
 #featured,
 #featured-hover {
-  height: $featuredHeight;
-  width: $photoColumnWidth;
+  height: $featured-height;
+  width: $photo-column-width;
 }
 
 #media-links {
-  top: $mediaLinksMarginTop + 16px;
+  top: $media-links-margin + 16px;
 
   padding-bottom: 16px;
 
@@ -81,14 +81,14 @@ $brainCircleMarginTop: $mediaLinksMarginTop + 12px;
     }
 
     & > img {
-      width: $mediaLinkSize;
-      height: $mediaLinkSize;
+      width: $media-link-size;
+      height: $media-link-size;
     }
   }
 }
 
 #circle-logo {
-  top: $brainCircleMarginTop;
-  height: $photoColumnWidth;
-  width: $photoColumnWidth;
+  top: $brain-circle-margin;
+  height: $photo-column-width;
+  width: $photo-column-width;
 }

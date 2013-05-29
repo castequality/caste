@@ -22,23 +22,23 @@ module.exports = function (grunt) {
     yeoman: yeomanConfig,
     watch: {
       coffee: {
-        files: ['<%= yeoman.app %>/scripts/{,*/}*.coffee'],
+        files: ['<%= yeoman.app %>/scripts/{,**/}*.coffee'],
         tasks: ['coffee:dist']
       },
       coffeeTest: {
-        files: ['test/spec/{,*/}*.coffee'],
+        files: ['test/spec/{,**/}*.coffee'],
         tasks: ['coffee:test']
       },
       sass: {
-        files: ['<%= yeoman.app %>/styles/{,*/}*.{scss,sass}'],
+        files: ['<%= yeoman.app %>/styles/{,**/}*.{scss,sass}'],
         tasks: ['sass:dist']
       },
       livereload: {
         files: [
           '<%= yeoman.app %>/{,*/}*.html',
-          '{.tmp,<%= yeoman.app %>}/styles/{,*/}*.css',
-          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
-          '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg}'
+          '{.tmp,<%= yeoman.app %>}/styles/{,**/}*.css',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,**/}*.js',
+          '<%= yeoman.app %>/images/{,**/}*.{png,jpg,jpeg}'
         ],
         tasks: ['livereload']
       }
@@ -85,7 +85,7 @@ module.exports = function (grunt) {
       },
       all: [
         'Gruntfile.js',
-        '<%= yeoman.app %>/scripts/{,*/}*.js'
+        '<%= yeoman.app %>/scripts/{,**/}*.js'
       ]
     },
     karma: {
@@ -113,11 +113,14 @@ module.exports = function (grunt) {
     },
     sass: {
       options: {
-        loadPath: '<%= yeoman.app %>/components/**/{scss,sass}'
+        loadPath: [
+          '<%= yeoman.app %>/styles',
+          '<%= yeoman.app %>/components/**/{scss,sass}'
+        ]
       },
       dist: {
         files: {
-          '.tmp/styles/main.css': ['<%= yeoman.app %>/styles/*.{scss,sass}']
+          '.tmp/styles/main.css': ['<%= yeoman.app %>/styles/main.{scss,sass}']
         }
       }
     },
@@ -137,8 +140,8 @@ module.exports = function (grunt) {
       }
     },
     usemin: {
-      html: ['<%= yeoman.dist %>/{,*/}*.html'],
-      css: ['<%= yeoman.dist %>/styles/{,*/}*.css'],
+      html: ['<%= yeoman.dist %>/{,**/}*.html'],
+      css: ['<%= yeoman.dist %>/styles/{,**/}*.css'],
       options: {
         dirs: ['<%= yeoman.dist %>']
       }
@@ -157,8 +160,8 @@ module.exports = function (grunt) {
       dist: {
         files: {
           '<%= yeoman.dist %>/styles/main.css': [
-            '.tmp/styles/{,*/}*.css',
-            '<%= yeoman.app %>/styles/{,*/}*.css'
+            '.tmp/styles/{,**/}*.css',
+            '<%= yeoman.app %>/styles/{,**/}*.css'
           ]
         }
       }

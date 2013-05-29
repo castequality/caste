@@ -1,4 +1,6 @@
+@import "globals/variables";
 @import "media-links";
+@import "header";
 @import "carousel";
 @import "blog";
 @import "about";
@@ -50,12 +52,12 @@ a {
 }
 
 #project {
-  width: 888px;
-  height: 500px;
+  width: $blog-width;
+  height: $blog-photo-height;
 
   & > img {
-    width: 888px;
-    height: 500px;
+    width: $blog-width;
+    height: $blog-photo-height;
     margin: auto;
   }
 
@@ -67,7 +69,7 @@ a {
 
 ul.projects {
   margin-top: 5px;
-  margin-bottom: 20px;
+  margin-bottom: $content-margin;
 }
 
 li.project {
@@ -75,19 +77,20 @@ li.project {
   list-style-type: none;
 }
 
-.item > p,
-.item > p > p {
-  margin: -1px 0;
+.item {
+  p {
+    margin: -1px 0;
+  }
 }
 
 img.project-img {
-  width: 888px;
-  height: 500px;
+  width: $blog-width;
+  height: $blog-photo-height;
 }
 
 .ng-view {
   margin-left: 92px;
-  margin-right: 20px;
+  margin-right: $content-margin;
   overflow: hidden;
   clear: both;
 
@@ -120,8 +123,12 @@ p, h1, h2, h3, h4, h5, a {
   font-family: Courier New, Courier;
 }
 
-#visuals > a:hover,
-#photo-feed > a:hover {
-  opacity: 0.9;
-  filter:Alpha(opacity=90);
+#visuals,
+#photo-feed {
+  & > a {
+    &:hover {
+      opacity: 0.9;
+      filter:Alpha(opacity=90);
+    }
+  }
 }

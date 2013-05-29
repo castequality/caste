@@ -1,6 +1,6 @@
 #blog {
   width: 524px;
-  margin-right: 20px;
+  margin-right: $content-margin;
   float: left;
 
   & > .post {
