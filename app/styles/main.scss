@@ -3,6 +3,7 @@
 @import "blog";
 @import "about";
 @import "stockists";
+@import "rollover";
 
 html {
   overflow-y: scroll;
@@ -51,17 +52,17 @@ a {
 #project {
   width: 888px;
   height: 500px;
-}
 
-#project > img {
-  width: 888px;
-  height: 500px;
-  margin: auto;
-}
+  & > img {
+    width: 888px;
+    height: 500px;
+    margin: auto;
+  }
 
-#project:after {
-  clear: both;
-  display: table;
+  &:after {
+    clear: both;
+    display: table;
+  }
 }
 
 ul.projects {
@@ -89,11 +90,11 @@ img.project-img {
   margin-right: 20px;
   overflow: hidden;
   clear: both;
-}
 
-.ng-view:after {
-  display: table;
-  clear: both;
+  &:after{
+    display: table;
+    clear: both;
+  }
 }
 
 .fancybox-outer > .fancybox-inner > img {

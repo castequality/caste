@@ -2,18 +2,18 @@
   width: 524px;
   margin-right: 20px;
   float: left;
-}
 
-#blog > .post > .video-player {
-  padding: 0 12px 0 12px;
-}
+  & > .post {
+    & > .video-player {
+      padding: 0 12px;
+    }
 
-#blog > .post > p > p > img {
-  width: 100%;
-}
-
-#blog > .post > img {
-  width: 100%;
+    p {
+      img {
+        width: 100%;
+      }
+    }
+  }
 }
 
 .post {

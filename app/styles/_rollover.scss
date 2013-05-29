@@ -1,0 +1,18 @@
+.rollover {
+  position: relative;
+  & > * {
+    position: absolute;
+  }
+
+  .hover {
+    &:hover{
+      opacity: 0;
+      filter:Alpha(opacity=0);
+    }
+  }
+}
+
+.hover {
+  opacity: 100;
+  filter:Alpha(opacity=100);
+}
