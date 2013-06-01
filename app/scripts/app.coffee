@@ -1,6 +1,6 @@
 'use strict'
 
-casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap'])
+casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap', 'svg-fallback'])
   .config(($routeProvider) ->
     $routeProvider
       .when '/', 
