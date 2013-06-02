@@ -32,23 +32,31 @@ a {
 }
 
 #visuals {
+  $visual-photo-width: 217px;
+  $visual-photo-gap: 4px;
+
   display: inline-block;
   width: 100%;
-  columns: 217px;
-  column-gap: 4px;
+  columns: $visual-photo-width;
+  column-gap: $visual-photo-gap;
 
    /* Firefox */
-  -moz-columns: 217px;
-  -moz-column-gap: 4px;
+  -moz-columns: $visual-photo-width;
+  -moz-column-gap: $visual-photo-gap;
    /* Safari and Chrome */
-  -webkit-column-gap: 4px;
-  -webkit-columns: 217px;
+  -webkit-column-gap: $visual-photo-gap;
+  -webkit-columns: $visual-photo-width;
 
+  & > a {
+    & > img {
+      width: $visual-photo-width;
+      margin: $visual-photo-gap auto 0 auto;
+    }
+  }
 }
 
-#visuals > a > img {
-  width: 217px;
-  margin: 4px auto 0 auto;
+.loading {
+  text-align: center;
 }
 
 #project {
