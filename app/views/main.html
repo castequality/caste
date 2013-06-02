@@ -3,7 +3,7 @@
     <img ng-src="{{photo.alt_sizes[1].url}}">
   </a>
 </div>
-<div id="blog">
+<div id="blog" infinite-scroll="loadPosts()" infinite-scroll-disabled="!canLoad()">
   <div ng-repeat="post in posts" class="post">
     <hr>
     <h4 class="post-title">
@@ -13,6 +13,10 @@
     <p ng-show="post.player" class="video-player" ng-bind-html-unsafe="post.player[2].embed_code"/>
     <p ng-bind-html-unsafe="post.body || post.caption"/>
     <img ng-repeat="photo in post.photos" ng-src="{{photo.alt_sizes[0].url}}">
+  </div>
+  <div class="post">
+    <hr ui-if="loading">
+    <p class="loading" ui-if="loading">loading more</p>
   </div>
 </div>
 <div class="photo-column" ui-scrollfix="138">

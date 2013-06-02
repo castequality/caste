@@ -13,7 +13,8 @@
     "fancybox": "~v2.1.4",
     "modernizr": "2.6.2",
     "angular-bootstrap": "~0.2.0",
-    "angular-svg-fallback": "~1.0.4"
+    "angular-svg-fallback": "~1.0.4",
+    "ng-infinite-scroller": "~1.0.0"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.5",

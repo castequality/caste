@@ -2,6 +2,9 @@
 
 angular.module('casteApp')
   .service('Blog', ($http, $q, API_KEY, WEB_ROOT, contributors) ->
+    @offset = 0
+    @limit  = 5
+
     @about = () =>
       $http.jsonp "#{WEB_ROOT}/castequality.tumblr.com/info", 
         params: 
@@ -14,7 +17,7 @@ angular.module('casteApp')
       $http.jsonp "#{WEB_ROOT}/#{contributor}.tumblr.com/posts", params: args
 
     @posts = (args = {}) =>
-      @query "casteblog", args
+      @query "casteblog", angular.extend args, { offset: @offset, limit: @limit }
 
     @projects = (args = {}) =>
       args.type = 'photo'
