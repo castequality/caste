@@ -21,11 +21,11 @@
 </div>
 <div class="photo-column" ui-scrollfix="138">
   <a class="rollover" ng-href="//store.castequality.com" target="_blank">
-    <img id="featured-hover" src="images/media/store.svg" svg>
+    <img id="featured-hover" src="images/store.svg" data-fallback="images/store.jpg"  svg>
     <img id="featured" class="hover" ng-src="{{store.featured.images[0].url}}" alt="{{store.featured.description}}">
   </a>
   <a class="rollover" href="//instagram.com/castequality" target="_blank">
-    <img id="instagram-hover" src="images/media/insta.svg" svg>
+    <img id="instagram-hover" src="images/insta.svg" data-fallback="images/insta.jpg"  svg>
     <img id="instagram" class="hover" ng-src="{{gram.images.standard_resolution.url}}" alt="{{gram.caption}}">
   </a>
   <div id="media-links" class="row-fluid">
@@ -42,5 +42,5 @@
       <img src="images/facebook.svg" alt="Caste on Facebook" svg>
     </a>
   </div>
-  <img id="circle-logo" src="images/media/brain-circle.svg" alt="Visual Stimulation Quality Products" svg>
+  <img id="circle-logo" src="images/brain-circle.svg" alt="Visual Stimulation Quality Products" svg>
 </div>
