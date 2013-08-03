@@ -7,19 +7,21 @@ angular.module('caste.services')
     @offset = 0
     @limit  = 5
 
+    baseArgs =
+      jsonp:  'JSON_CALLBACK'
+      api_key: @apiKey
+      offset:  @offset
+      limit:   @limit
+
     @about = () =>
-      $http.jsonp "#{@rootUrl}/castequality.tumblr.com/info", 
-        params: 
-          api_key: @apiKey,
-          jsonp: 'JSON_CALLBACK'
+      $http.jsonp "#{@rootUrl}/castequality.tumblr.com/info", params: baseArgs
 
     @query = (contributor, args = {}) =>
-      args.api_key = @apiKey
-      args.jsonp = 'JSON_CALLBACK'
+      args = angular.extend baseArgs, args
       $http.jsonp "#{@rootUrl}/#{contributor}.tumblr.com/posts", params: args
 
     @posts = (args = {}) =>
-      @query "casteblog", angular.extend args, { offset: @offset, limit: @limit }
+      @query "casteblog", args
 
     @projects = (args = {}) =>
       args.type = 'photo'
@@ -30,9 +32,11 @@ angular.module('caste.services')
       @query "castequality", args
 
     @visuals = (args = {}) =>
-      promises = []
+      promises  = []
+      args.type = 'photo'
+
       for contributor in @contributors
-        args.type = 'photo'
         # args.tag = 'castequality'
         promises.push @query contributor, args
+
       $q.all promises
