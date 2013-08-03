@@ -1,8 +1,5 @@
-'use strict'
-
 angular.module('casteApp')
-  .value('INSTA_ID', 259689659)
-  .controller 'MainCtrl', ($scope, Blog, Instagram, Store, INSTA_ID) ->
+  .controller 'MainCtrl', ($scope, Blog, Instagram, Store) ->
     $scope.feed       = []
     $scope.store      = Store
     $scope.blog       = Blog
@@ -20,7 +17,7 @@ angular.module('casteApp')
         for photo in post.photos
           $scope.feed.push(photo)
 
-    Instagram.top(INSTA_ID).success (response) ->
+    Instagram.top().success (response) ->
       $scope.gram = response.data[0]
     # on load end =====================
 

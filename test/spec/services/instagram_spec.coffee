@@ -1,7 +1,7 @@
 describe 'Service: Instagram', (INSTA_WEB_ROOT, INSTA_ID) ->
 
   # load the service's module
-  beforeEach module('casteApp')
+  beforeEach module('caste.services')
 
   # instantiate service
   injector = {}
@@ -13,7 +13,7 @@ describe 'Service: Instagram', (INSTA_WEB_ROOT, INSTA_ID) ->
   beforeEach inject ($injector) ->
     injector = $injector
 
-  it 'should retrieve photos from the feed', () ->
+  it 'retrieves the top photo from the feed', () ->
     $httpBackend = injector.get '$httpBackend'
     $httpBackend.whenJSONP(USER_URL).respond(
 

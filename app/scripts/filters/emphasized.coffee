@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('casteApp')
   .filter 'emphasized', () ->
     (input, text) ->

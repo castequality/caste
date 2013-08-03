@@ -1,7 +1,7 @@
 describe 'Service: Blog', (API_KEY, WEB_ROOT)->
 
   # load the service's module
-  beforeEach module('casteApp')
+  beforeEach module('caste.services')
 
   # instantiate service
   Blog = {}

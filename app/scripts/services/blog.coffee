@@ -1,20 +1,22 @@
-'use strict'
+angular.module('caste.services')
+  .service 'Blog', ($http, $q) ->
+    @contributors = ['zandertaketomo', 'chrismulhern', 'waltwolfe']
+    @apiKey  = 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0'
+    @rootUrl = '//api.tumblr.com/v2/blog'
 
-angular.module('casteApp')
-  .service('Blog', ($http, $q, API_KEY, WEB_ROOT, contributors) ->
     @offset = 0
     @limit  = 5
 
     @about = () =>
-      $http.jsonp "#{WEB_ROOT}/castequality.tumblr.com/info", 
+      $http.jsonp "#{@rootUrl}/castequality.tumblr.com/info", 
         params: 
-          api_key: API_KEY,
+          api_key: @apiKey,
           jsonp: 'JSON_CALLBACK'
 
     @query = (contributor, args = {}) =>
-      args.api_key = API_KEY
+      args.api_key = @apiKey
       args.jsonp = 'JSON_CALLBACK'
-      $http.jsonp "#{WEB_ROOT}/#{contributor}.tumblr.com/posts", params: args
+      $http.jsonp "#{@rootUrl}/#{contributor}.tumblr.com/posts", params: args
 
     @posts = (args = {}) =>
       @query "casteblog", angular.extend args, { offset: @offset, limit: @limit }
@@ -29,12 +31,8 @@ angular.module('casteApp')
 
     @visuals = (args = {}) =>
       promises = []
-      for contributor in contributors
+      for contributor in @contributors
         args.type = 'photo'
         # args.tag = 'castequality'
         promises.push @query contributor, args
       $q.all promises
-  )
-.value('API_KEY', 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0')
-.value('WEB_ROOT', '//api.tumblr.com/v2/blog')
-.value('contributors', ['zandertaketomo', 'chrismulhern', 'waltwolfe'])

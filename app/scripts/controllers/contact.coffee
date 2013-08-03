@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('casteApp')
   .controller 'ContactCtrl', ($scope, Blog) ->
     Blog.about().success (data) ->

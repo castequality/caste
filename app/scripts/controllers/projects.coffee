@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('casteApp')
   .controller 'ProjectsCtrl', ($scope, $routeParams, Blog) ->
     $scope.pages = 
