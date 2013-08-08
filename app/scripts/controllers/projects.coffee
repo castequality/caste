@@ -1,20 +1,13 @@
 angular.module('casteApp')
   .controller 'ProjectsCtrl', ($scope, $routeParams, Blog) ->
+    Blog.getProjects($routeParams.media)
+
+    $scope.projects = Blog.projects
+
+    # for carousel
     $scope.pages = 
       index: 0,
       interval: NaN
-
-    $scope.p = $routeParams.p
-
-    Blog.projects().success (data) ->
-      $scope.projects = []
-      for post in data?.response.posts
-        post.pages = post.photos
-        if post.caption?.length
-          post.pages.push
-            media: post.caption
-            active: $routeParams.media
-        $scope.projects.push post
 
     $scope.timestamp = (key) ->
       unless timestamp?
@@ -22,7 +15,6 @@ angular.module('casteApp')
         for key of $scope.projects
           keys.push(key)
         timestamp = Math.max keys
-
 
     $scope.get = (timestamp) ->
       $scope.projects?[timestamp] || $scope.projects?[$scope.timestamp()]

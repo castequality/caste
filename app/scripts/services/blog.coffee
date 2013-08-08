@@ -3,7 +3,7 @@ angular.module('caste.services')
     contributors: ['zandertaketomo', 'chrismulhern', 'waltwolfe']
     blog: 'casteblog'
     photo: 'castequality'
-    projects: 'casteprojects'
+    projects: 'casteproject'
     rootUrl: '//api.tumblr.com/v2/blog'
     defaultParams:
       api_key: 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0'
@@ -18,8 +18,9 @@ angular.module('caste.services')
       limit:   @limit
 
     @about    = {}
+    @projects = {}
+    
     @posts    = []
-    @projects = []
     @photos   = []
     @visuals  = []
 
@@ -43,11 +44,16 @@ angular.module('caste.services')
         loading = false
       )
 
-    @getProjects = =>
+    @getProjects = (active) =>
       @query(BlogConfig.projects, type: 'photo').success (data) =>
         for project in data.response.posts
-          @projects.push project
-
+          project.pages = project.photos
+          if project.caption?.length
+            project.pages.push
+              media: project.caption
+              active: active
+          @projects[project.timestamp] = project
+        
     @getPhotos = =>
       @query(BlogConfig.photo, type: 'photo').success (data) =>
         for post in data.response.posts

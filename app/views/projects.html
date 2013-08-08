@@ -1,12 +1,12 @@
 <carousel interval="pages.interval">
   <slide ng-repeat="page in get(p).pages" active="page.active">
-    <img ui-if="page.original_size" class="project-img" ng-src="{{page.original_size.url}}">
+    <img ui-if="page.original_size" class="project-img" ng-src="{{page | thumblr}}">
     <p ui-if="page.media" ng-bind-html-unsafe="page.media"/>
   </slide>
 </carousel>
 <ul class="projects">
-  <li class="project" ng-repeat="project in projects">
-    <a ng-href="#/project?p={{project.timestamp}}">{{$index + 1 | romanize}}</a>
+  <li class="project" ng-repeat="(timestamp, project) in projects">
+    <a ng-href="#/project?p={{timestamp}}">{{$index + 1 | romanize}}</a>
     <span ui-if="!$last">&gt;</span>
   </li>
 </ul>

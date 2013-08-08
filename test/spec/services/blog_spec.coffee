@@ -26,7 +26,7 @@ describe 'Service: Blog', ()->
     $httpBackend.flush()
 
   describe 'retreives blog info', ->
-    blog = { title: 'title', description: 'description' }
+    blog = blog: { title: 'title', description: 'description' }
     beforeEach ->
       $httpBackend.whenJSONP(/\.tumblr\.com\/info/).respond blog
       Blog.getAbout()
@@ -48,7 +48,7 @@ describe 'Service: Blog', ()->
       expect(Blog.offset).toBe 1
     
   describe 'retrieves projects', ->
-    post = { type: 'photo', photos: [{alt_sizes: []}] }
+    post = { type: 'photo', photos: [{alt_sizes: []}], timestamp: 0 }
     beforeEach ->
       mockOk(post, Blog.getProjects)
 
