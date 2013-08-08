@@ -1,4 +1,5 @@
 angular.module('caste.services', [])
+angular.module('caste.filters', [])
 
 angular.module('casteApp', [
                               'ui',
@@ -6,7 +7,8 @@ angular.module('casteApp', [
                               'svg-fallback',
                               'infinite-scroll',
                               'ng-romanize',
-                              'caste.services'
+                              'caste.services',
+                              'caste.filters'
                             ])
   .config(($routeProvider) ->
     $routeProvider

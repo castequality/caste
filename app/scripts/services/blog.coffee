@@ -1,42 +1,75 @@
 angular.module('caste.services')
-  .service 'Blog', ($http, $q) ->
-    @contributors = ['zandertaketomo', 'chrismulhern', 'waltwolfe']
-    @apiKey  = 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0'
-    @rootUrl = '//api.tumblr.com/v2/blog'
-
-    @offset = 0
-    @limit  = 5
-
-    baseArgs =
+  .value('BlogConfig',
+    contributors: ['zandertaketomo', 'chrismulhern', 'waltwolfe']
+    blog: 'casteblog'
+    photo: 'castequality'
+    projects: 'casteprojects'
+    rootUrl: '//api.tumblr.com/v2/blog'
+    defaultParams:
+      api_key: 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0'
       jsonp:  'JSON_CALLBACK'
-      api_key: @apiKey
+  )
+  .service 'Blog', ($http, $q, BlogConfig) ->
+    @offset   = 0
+    @limit    = 5
+    @total    = 0
+    @PARAMS   = angular.extend BlogConfig.defaultParams,
       offset:  @offset
       limit:   @limit
 
-    @about = () =>
-      $http.jsonp "#{@rootUrl}/castequality.tumblr.com/info", params: baseArgs
+    @about    = {}
+    @posts    = []
+    @projects = []
+    @photos   = []
+    @visuals  = []
 
-    @query = (contributor, args = {}) =>
-      args = angular.extend baseArgs, args
-      $http.jsonp "#{@rootUrl}/#{contributor}.tumblr.com/posts", params: args
+    loading   = false
 
-    @posts = (args = {}) =>
-      @query "casteblog", args
+    @canLoad  = () ->
+      !loading or @total <= @offset
 
-    @projects = (args = {}) =>
-      args.type = 'photo'
-      @query "casteproject", args
+    @url = (contributor, endpoint = "posts") =>
+      "#{BlogConfig.rootUrl}/#{contributor}.tumblr.com/#{endpoint}"
 
-    @feed = (args = {}) =>
-      args.type = 'photo'
-      @query "castequality", args
+    @getPosts = =>
+      loading = true
+      @query(BlogConfig.blog).success((data) =>
+        @total = data.response.total
+        for post in data.response.posts
+          @posts.push post
+          @offset += 1
+      ).error((error) ->
+        # once done loading, flip the switch
+        loading = false
+      )
 
-    @visuals = (args = {}) =>
-      promises  = []
-      args.type = 'photo'
+    @getProjects = =>
+      @query(BlogConfig.projects, type: 'photo').success (data) =>
+        for project in data.response.posts
+          @projects.push project
 
-      for contributor in @contributors
+    @getPhotos = =>
+      @query(BlogConfig.photo, type: 'photo').success (data) =>
+        for post in data.response.posts
+          for photo in post.photos
+            @photos.push photo
+
+    @getVisuals = =>
+      promises = for contributor in BlogConfig.contributors
         # args.tag = 'castequality'
-        promises.push @query contributor, args
+        @query contributor, type: 'photo'
 
-      $q.all promises
+      $q.all(promises).then (results) =>
+        for result in results
+          for post in result.data.response.posts
+            for photo in post.photos
+              @visuals.push photo
+
+    @getAbout = () =>
+      $http.jsonp(@url(BlogConfig.photo, "info"), params: @PARAMS).success (data) =>
+        blog = data?.response?.blog
+        @about.title = blog?.title
+        @about.description = blog?.description
+
+    @query = (contributor) =>
+      $http.jsonp @url(contributor), params: @PARAMS

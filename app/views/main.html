@@ -1,9 +1,9 @@
 <div id="photo-feed">
-  <a ng-repeat="photo in feed" href="{{photo.alt_sizes[1].url}}" ui-jq="fancybox" rel="visuals">
-    <img ng-src="{{photo.alt_sizes[1].url}}">
+  <a ng-repeat="photo in photos" href="{{photo | thumblr:1}}" ui-jq="fancybox" rel="visuals">
+    <img ng-src="{{photo | thumblr:1}}">
   </a>
 </div>
-<div id="blog" infinite-scroll="loadPosts()" infinite-scroll-disabled="!canLoad()">
+<div id="blog" infinite-scroll="getPosts()" infinite-scroll-disabled="!canLoad()">
   <div ng-repeat="post in posts" class="post">
     <hr>
     <h4 class="post-title">

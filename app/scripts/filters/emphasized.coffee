@@ -1,4 +1,4 @@
-angular.module('casteApp')
+angular.module('caste.filters')
   .filter 'emphasized', () ->
     (input, text) ->
       regex = new RegExp text, 'gi'
