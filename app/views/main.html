@@ -1,6 +1,6 @@
 <div id="photo-feed">
-  <a ng-repeat="photo in photos" href="{{photo | thumblr:1}}" ui-jq="fancybox" rel="visuals">
-    <img ng-src="{{photo | thumblr:1}}">
+  <a ng-repeat="photo in photos" href="{{photo | thumblr}}" ui-jq="fancybox" rel="visuals">
+    <img ng-src="{{photo | thumblr:3}}">
   </a>
 </div>
 <div id="blog" infinite-scroll="getPosts()" infinite-scroll-disabled="!canLoad()">
@@ -12,7 +12,7 @@
     </h4>
     <p ng-show="post.player" class="video-player" ng-bind-html-unsafe="post.player[2].embed_code"/>
     <p ng-bind-html-unsafe="post.body || post.caption"/>
-    <img ng-repeat="photo in post.photos" ng-src="{{photo.alt_sizes[0].url}}">
+    <img ng-repeat="photo in post.photos" ng-src="{{photo | thumblr:1}}">
   </div>
   <div class="post">
     <hr ui-if="loading">
@@ -26,7 +26,7 @@
   </a>
   <a class="rollover" href="//instagram.com/castequality" target="_blank">
     <img id="instagram-hover" src="images/insta.svg" data-fallback="images/insta.jpg"  svg>
-    <img id="instagram" class="hover" ng-src="{{gram.images.standard_resolution.url}}" alt="{{gram.caption}}">
+    <img id="instagram" class="hover" ng-src="{{gram | instaThumb}}" alt="{{gram.caption}}">
   </a>
   <div id="media-links" class="row-fluid">
     <a href="http://vimeo.com/user16108071" target="_blank">

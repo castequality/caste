@@ -3,6 +3,8 @@ angular.module('casteApp')
     $scope.store      = Store
     $scope.posts      = Blog.posts
     $scope.photos     = Blog.photos
+    $scope.gram       = Instagram.top
+
     $scope.canLoad    = Blog.canLoad
     $scope.getPosts   = Blog.getPosts
 
@@ -12,6 +14,5 @@ angular.module('casteApp')
     Blog.getPosts()
     Blog.getPhotos()
 
-    Instagram.top().success (response) ->
-      $scope.gram = response.data[0]
+    Instagram.get()
     # on load end =====================

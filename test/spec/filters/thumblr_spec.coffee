@@ -8,7 +8,7 @@ describe 'thumblr filter', ->
 
   describe 'without params', ->
     it 'extracts the original thumb', ->
-      photo = alt_sizes: [{ url: url }]
+      photo = original_size: { url: url }
       expect(thumblr(photo)).toEqual url
 
   describe 'with params', ->
