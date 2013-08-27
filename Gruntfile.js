@@ -221,7 +221,8 @@ module.exports = function (grunt) {
             '*.{ico,txt}',
             '.htaccess',
             'CNAME',
-            'components/**/*'
+            'components/**/*',
+            'images/**/*.svg'
           ]
         }]
       }
@@ -264,7 +265,7 @@ module.exports = function (grunt) {
     'coffee',
     'sass:dist',
     'useminPrepare:html',
-    // 'imagemin',
+    'imagemin',
     'cssmin',
     'htmlmin',
     'concat',
