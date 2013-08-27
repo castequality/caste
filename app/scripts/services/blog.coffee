@@ -55,7 +55,7 @@ angular.module('caste.services')
           @projects[project.timestamp] = project
         
     @getPhotos = =>
-      @query(BlogConfig.photo, type: 'photo').success (data) =>
+      @query(BlogConfig.photo, type: 'photo', limit: null, offset: null).success (data) =>
         for post in data.response.posts
           for photo in post.photos
             @photos.push photo
@@ -77,5 +77,5 @@ angular.module('caste.services')
         @about.title = blog?.title
         @about.description = blog?.description
 
-    @query = (contributor) =>
-      $http.jsonp @url(contributor), params: @PARAMS
+    @query = (contributor, params = {}) =>
+      $http.jsonp @url(contributor), params: angular.extend(@PARAMS, params)
