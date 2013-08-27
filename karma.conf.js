@@ -7,9 +7,15 @@ basePath = '';
 files = [
   JASMINE,
   JASMINE_ADAPTER,
+  // #{name}/#{name}.js
   'app/components/angular/angular.js',
   'app/components/angular-resource/angular-resource.js',
   'app/components/angular-mocks/angular-mocks.js',
+  'app/components/angular-bootstrap/ui-bootstrap.js',
+  'app/components/angular-svg-fallback/js/angular-svg-fallback.js',
+  // #{name}/build/#{name}.js
+  'app/components/angular-ui/build/angular-ui.js',
+  'app/components/ng-infinite-scroller/build/ng-infinite-scroll.js',
   '.tmp/scripts/*.js',
   '.tmp/spec/*.js'
 ];

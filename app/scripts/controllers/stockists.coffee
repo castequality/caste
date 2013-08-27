@@ -1,5 +1,3 @@
-'use strict'
-
 angular.module('casteApp')
   .controller 'StockistsCtrl', ($scope, Blog, Instagram) ->
     $scope.cards =

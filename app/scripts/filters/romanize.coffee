@@ -1,6 +1,4 @@
-'use strict'
-
-angular.module('casteApp')
+angular.module('ng-romanize', [])
   .filter 'romanize', () ->
     (input) ->
       return 0 unless +input

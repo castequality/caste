@@ -1,5 +1,5 @@
 <div id="visuals">
-  <a ng-repeat="photo in photos" href="{{photo.alt_sizes[1].url}}" ui-jq="fancybox" rel="visuals">
-    <img ng-src="{{photo.alt_sizes[1].url}}">
+  <a ng-repeat="photo in visuals" href="{{photo | thumblr }}" ui-jq="fancybox" rel="visuals">
+    <img ng-src="{{photo | thumblr:2 }}">
   </a>
 </div>
