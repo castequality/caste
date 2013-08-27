@@ -264,7 +264,7 @@ module.exports = function (grunt) {
     'coffee',
     'sass:dist',
     'useminPrepare:html',
-    'imagemin',
+    // 'imagemin',
     'cssmin',
     'htmlmin',
     'concat',
