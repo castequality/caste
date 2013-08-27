@@ -64,11 +64,11 @@ describe 'Service: Blog', ()->
       expect(Blog.photos).toEqual post.photos
 
 
-  describe 'retrieves visual feed', ->
-    post = { type: 'photo', photos: [{alt_sizes: []}] }
-    beforeEach ->
-      mockOk(post, Blog.getVisuals)
+  # describe 'retrieves visual feed', ->
+  #   post = { type: 'photo', photos: [{alt_sizes: []}] }
+  #   beforeEach ->
+  #     mockOk(post, Blog.getVisuals)
 
-    it 'populating @visuals', ->
-      expect(Blog.visuals).toEqual post.photos
+  #   it 'populating @visuals', ->
+  #     expect(Blog.visuals).toEqual post.photos
 
