@@ -1,40 +1,81 @@
-'use strict'
-
-angular.module('casteApp')
-  .service('Blog', ($http, $q, API_KEY, WEB_ROOT, contributors) ->
-    @offset = 0
-    @limit  = 5
-
-    @about = () =>
-      $http.jsonp "#{WEB_ROOT}/castequality.tumblr.com/info", 
-        params: 
-          api_key: API_KEY,
-          jsonp: 'JSON_CALLBACK'
-
-    @query = (contributor, args = {}) =>
-      args.api_key = API_KEY
-      args.jsonp = 'JSON_CALLBACK'
-      $http.jsonp "#{WEB_ROOT}/#{contributor}.tumblr.com/posts", params: args
-
-    @posts = (args = {}) =>
-      @query "casteblog", angular.extend args, { offset: @offset, limit: @limit }
-
-    @projects = (args = {}) =>
-      args.type = 'photo'
-      @query "casteproject", args
-
-    @feed = (args = {}) =>
-      args.type = 'photo'
-      @query "castequality", args
-
-    @visuals = (args = {}) =>
-      promises = []
-      for contributor in contributors
-        args.type = 'photo'
-        # args.tag = 'castequality'
-        promises.push @query contributor, args
-      $q.all promises
+angular.module('caste.services')
+  .value('BlogConfig',
+    contributors: ['zandertaketomo', 'chrismulhern', 'waltwolfe']
+    blog: 'casteblog'
+    photo: 'castequality'
+    projects: 'casteproject'
+    rootUrl: '//api.tumblr.com/v2/blog'
+    defaultParams:
+      api_key: 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0'
+      jsonp:  'JSON_CALLBACK'
   )
-.value('API_KEY', 'NvWaTzI30JItCIsWNf5UQe3BlI85yZ1Fq70aYiB77X4Z93wtj0')
-.value('WEB_ROOT', '//api.tumblr.com/v2/blog')
-.value('contributors', ['zandertaketomo', 'chrismulhern', 'waltwolfe'])
+  .service 'Blog', ($http, $q, BlogConfig) ->
+    @offset   = 0
+    @limit    = 5
+    @total    = 0
+    @PARAMS   = angular.extend BlogConfig.defaultParams,
+      offset:  @offset
+      limit:   @limit
+
+    @about    = {}
+    @projects = {}
+    
+    @posts    = []
+    @photos   = []
+    @visuals  = []
+
+    loading   = false
+
+    @canLoad  = () ->
+      !loading or @total <= @offset
+
+    @url = (contributor, endpoint = "posts") =>
+      "#{BlogConfig.rootUrl}/#{contributor}.tumblr.com/#{endpoint}"
+
+    @getPosts = =>
+      loading = true
+      @query(BlogConfig.blog).success((data) =>
+        @total = data.response.total
+        for post in data.response.posts
+          @posts.push post
+          @offset += 1
+      ).error((error) ->
+        # once done loading, flip the switch
+        loading = false
+      )
+
+    @getProjects = (active) =>
+      @query(BlogConfig.projects, type: 'photo').success (data) =>
+        for project in data.response.posts
+          project.pages = project.photos
+          if project.caption?.length
+            project.pages.push
+              media: project.caption
+              active: active
+          @projects[project.timestamp] = project
+        
+    @getPhotos = =>
+      @query(BlogConfig.photo, type: 'photo').success (data) =>
+        for post in data.response.posts
+          for photo in post.photos
+            @photos.push photo
+
+    @getVisuals = =>
+      promises = for contributor in BlogConfig.contributors
+        # args.tag = 'castequality'
+        @query contributor, type: 'photo'
+
+      $q.all(promises).then (results) =>
+        for result in results
+          for post in result.data.response.posts
+            for photo in post.photos
+              @visuals.push photo
+
+    @getAbout = () =>
+      $http.jsonp(@url(BlogConfig.photo, "info"), params: @PARAMS).success (data) =>
+        blog = data?.response?.blog
+        @about.title = blog?.title
+        @about.description = blog?.description
+
+    @query = (contributor) =>
+      $http.jsonp @url(contributor), params: @PARAMS

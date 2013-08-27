@@ -1,13 +1,14 @@
-'use strict'
-
-angular.module('casteApp')
-  .service('Instagram', ($http, INSTA_API, INSTA_WEB_ROOT) ->
-    @top = (id) =>
-      params = 
-        access_token: INSTA_API,
-        callback: 'JSON_CALLBACK',
-        count: 1
-      $http.jsonp "#{INSTA_WEB_ROOT}/#{id}/media/recent", params: params
+angular.module('caste.services')
+  .value('InstagramConfig',
+    id: 259689659
+    rootUrl: 'https://api.instagram.com/v1/users'
+    params:
+      access_token: '259689659.f59def8.a917d511dec04821af5c92a842fafe62'
+      callback: 'JSON_CALLBACK'
   )
-.value('INSTA_API', '259689659.f59def8.a917d511dec04821af5c92a842fafe62')
-.value('INSTA_WEB_ROOT', 'https://api.instagram.com/v1/users')
+  .service 'Instagram', ($http, InstagramConfig) ->
+    @get = () =>
+      params = angular.extend InstagramConfig.params, count: 1
+      url = "#{InstagramConfig.rootUrl}/#{InstagramConfig.id}/media/recent"
+      $http.jsonp(url, params: params).success (response) =>
+        @top = response.data[0]

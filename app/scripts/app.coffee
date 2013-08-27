@@ -1,6 +1,15 @@
-'use strict'
+angular.module('caste.services', [])
+angular.module('caste.filters', [])
 
-casteApp = angular.module('casteApp', ['ui', 'ui.bootstrap', 'svg-fallback', 'infinite-scroll'])
+angular.module('casteApp', [
+                              'ui',
+                              'ui.bootstrap',
+                              'svg-fallback',
+                              'infinite-scroll',
+                              'ng-romanize',
+                              'caste.services',
+                              'caste.filters'
+                            ])
   .config(($routeProvider) ->
     $routeProvider
       .when '/', 
