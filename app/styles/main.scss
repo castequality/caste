@@ -6,6 +6,7 @@
 @import "about";
 @import "stockists";
 @import "rollover";
+@import "splash";
 
 html {
   overflow-y: scroll;
@@ -26,7 +27,7 @@ a {
   color: black;
 }
 
-#content {
+.container {
   margin: auto;
   width: 1000px;
 }
