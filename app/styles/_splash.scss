@@ -25,6 +25,22 @@
   }
 }
 
+.splash-link {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 39px;
+  
+  width: 100%;
+  text-align: center;
+
+  color: #fff;
+  font: {
+    size: 16px;
+    weight: 600;
+  }
+}
+
 .splash-body {
   background-color: #000;
 }
