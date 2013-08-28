@@ -10,9 +10,21 @@ angular.module('casteApp', [
                               'caste.services',
                               'caste.filters'
                             ])
+  .run(($rootScope, $location) ->
+    $rootScope.$watch(() ->
+      $location.path()
+    , (newPath, oldPath) ->
+      $rootScope.splash = newPath is '/'
+    , true)
+  )
   .config(($routeProvider) ->
+
+
     $routeProvider
       .when '/', 
+        templateUrl: '/views/splash.html',
+        controller: 'MainCtrl'
+      .when '/feed', 
         templateUrl: '/views/main.html',
         controller: 'MainCtrl'
       .when '/stockists',

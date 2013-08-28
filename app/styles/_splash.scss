@@ -1,0 +1,24 @@
+.splash-container {
+  width: 1200px;
+  height: 100%;
+
+  margin: auto;
+  margin-left: -1px;
+  padding: 100px;
+
+  background-image: url('/images/media/installment_1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .ng-view {
+    margin: auto;
+  }
+}
+
+.splash-video {
+
+}
+
+.splash-body {
+  background-color: #000;
+}
