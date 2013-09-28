@@ -11,11 +11,8 @@ angular.module('caste.services')
   )
   .service 'Blog', ($http, $q, BlogConfig) ->
     @offset   = 0
-    @limit    = 5
+    @limit    = 2
     @total    = 0
-    @PARAMS   = angular.extend BlogConfig.defaultParams,
-      offset:  @offset
-      limit:   @limit
 
     @about    = {}
     @projects = {}
@@ -24,24 +21,32 @@ angular.module('caste.services')
     @photos   = []
     @visuals  = []
 
-    loading   = false
+    @loading   = false
 
-    @canLoad  = () ->
-      !loading or @total <= @offset
+    @canLoad  = () =>
+      !@loading and @offset < @total
 
     @url = (contributor, endpoint = "posts") =>
       "#{BlogConfig.rootUrl}/#{contributor}.tumblr.com/#{endpoint}"
 
+    @params = =>
+      angular.extend angular.copy(BlogConfig.defaultParams),
+        offset:  @offset
+        limit:   @limit
+
     @getPosts = =>
-      loading = true
+      @loading = true
       @query(BlogConfig.blog).success((data) =>
-        @total = data.response.total
+        @total = data.response.total_posts
         for post in data.response.posts
           @posts.push post
           @offset += 1
+
+        # once done loading, flip the switch
+        @loading = false
       ).error((error) ->
         # once done loading, flip the switch
-        loading = false
+        @loading = false
       )
 
     @getProjects = (active) =>
@@ -72,10 +77,10 @@ angular.module('caste.services')
               @visuals.push photo
 
     @getAbout = () =>
-      $http.jsonp(@url(BlogConfig.photo, "info"), params: @PARAMS).success (data) =>
+      $http.jsonp(@url(BlogConfig.photo, "info"), params: @params()).success (data) =>
         blog = data?.response?.blog
         @about.title = blog?.title
         @about.description = blog?.description
 
     @query = (contributor, params = {}) =>
-      $http.jsonp @url(contributor), params: angular.extend(@PARAMS, params)
+      $http.jsonp @url(contributor), params: angular.extend(@params(), params)
