@@ -1,6 +1,7 @@
 angular.module('casteApp')
   .controller 'MainCtrl', ($scope, Blog, Instagram, Store) ->
     $scope.store      = Store
+    $scope.blog       = Blog
     $scope.posts      = Blog.posts
     $scope.photos     = Blog.photos
     $scope.gram       = Instagram.top

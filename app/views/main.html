@@ -14,9 +14,9 @@
     <p ng-bind-html-unsafe="post.body || post.caption"/>
     <img ng-repeat="photo in post.photos" ng-src="{{photo | thumblr:1}}">
   </div>
-  <div class="post">
-    <hr ui-if="loading">
-    <p class="loading" ui-if="loading">loading more</p>
+  <div class="post" ui-if="blog.loading">
+    <hr>
+    <p class="loading">loading more</p>
   </div>
 </div>
 <div class="photo-column" ui-scrollfix="138">
